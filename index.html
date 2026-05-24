@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050816">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Diwanshu is a modern website designer and frontend developer helping brands build fast, clean, responsive websites with premium UI, smooth motion, and client-ready frontend development.">
+  <meta name="keywords" content="Diwanshu, frontend developer, website designer, portfolio website, landing page designer, UI UX designer, responsive web design, Fiverr freelancer, WhatsApp website designer">
+  <meta name="author" content="Diwanshu">
+  <meta property="og:title" content="Diwanshu | Modern Website Designer & Frontend Developer">
+  <meta property="og:description" content="Helping brands build fast, clean, responsive websites with premium UI, futuristic motion, and polished frontend development.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="profile.jpg.PNG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diwanshu | Modern Website Designer & Frontend Developer">
+  <meta name="twitter:description" content="Helping brands build fast, clean, responsive websites with premium UI and smooth frontend development.">
+
+  <title>Diwanshu | Modern Website Designer & Frontend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+
+<body>
+  <div class="loader" id="loader" aria-label="Loading portfolio">
+    <div class="loader-mark">
+      <span></span>
+      <strong>D</strong>
+    </div>
+    <p>Launching experience</p>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="site-bg" aria-hidden="true">
+    <span class="gradient-blob blob-one"></span>
+    <span class="gradient-blob blob-two"></span>
+    <span class="gradient-blob blob-three"></span>
+    <div class="grid-fade"></div>
+    <div class="particle-field" id="particleField"></div>
+  </div>
+
+  <nav class="navbar" id="navbar" aria-label="Primary navigation">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="Diwanshu home">
+        <span class="brand-mark">D</span>
+        <span>Diwanshu</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">
+        <i data-lucide="send"></i>
+        <span>Hire Me</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow reveal">
+          <span></span>
+          Available for freelance projects
+        </div>
+        <h1 class="hero-title reveal">Diwanshu</h1>
+        <p class="hero-subtitle reveal">Modern Website Designer &amp; Frontend Developer</p>
+        <p class="hero-tagline reveal">Helping Brands Build Fast, Clean &amp; Responsive Websites</p>
+        <p class="hero-intro reveal">
+          I craft premium web experiences for businesses, startups, creators, and personal brands, blending clean frontend code with cinematic interfaces that feel fast, polished, and built to convert.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary magnetic" href="https://wa.me/919816357615?text=Hi%20Diwanshu%2C%20I%20want%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i>
+            <span>WhatsApp Me</span>
+          </a>
+          <a class="btn btn-secondary magnetic" href="#projects">
+            <i data-lucide="layers-3"></i>
+            <span>View Projects</span>
+          </a>
+          <a class="btn btn-ghost magnetic" href="#contact">
+            <i data-lucide="briefcase-business"></i>
+            <span>Hire Me</span>
+          </a>
+        </div>
+
+        <div class="hero-metrics reveal" aria-label="Portfolio highlights">
+          <div>
+            <strong>Premium</strong>
+            <span>UI systems</span>
+          </div>
+          <div>
+            <strong>Responsive</strong>
+            <span>All devices</span>
+          </div>
+          <div>
+            <strong>Fast</strong>
+            <span>Frontend builds</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Interactive futuristic 3D visual">
+        <canvas id="heroCanvas"></canvas>
+        <div class="canvas-fallback" id="canvasFallback"></div>
+        <div class="orbit-tag tag-one">UI/UX</div>
+        <div class="orbit-tag tag-two">Three.js</div>
+        <div class="orbit-tag tag-three">GSAP</div>
+        <div class="profile-chip">
+          <img src="profile.jpg.PNG" alt="Portrait of Diwanshu" width="64" height="64">
+          <div>
+            <span>Designer</span>
+            <strong>Frontend focused</strong>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to about section">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="section-kicker">About</span>
+          <h2>Built for brands that need more than a basic website.</h2>
+          <p>
+            I combine visual design, frontend execution, responsive thinking, and smooth interaction design to create websites that feel premium from the first scroll.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-portrait reveal">
+            <img src="profile.jpg.PNG" alt="Diwanshu profile portrait" loading="lazy">
+            <div class="portrait-glow"></div>
+          </div>
+
+          <div class="about-copy reveal">
+            <p>
+              My work focuses on clean layouts, modern animations, strong visual hierarchy, and business-ready sections that help visitors understand, trust, and take action quickly.
+            </p>
+            <div class="timeline" aria-label="Workflow timeline">
+              <article class="timeline-item" data-tilt>
+                <span>01</span>
+                <div>
+                  <h3>Discover</h3>
+                  <p>Understand the offer, audience, and conversion goal before touching the layout.</p>
+                </div>
+              </article>
+              <article class="timeline-item" data-tilt>
+                <span>02</span>
+                <div>
+                  <h3>Design</h3>
+                  <p>Create polished UI systems with strong spacing, typography, and responsive structure.</p>
+                </div>
+              </article>
+              <article class="timeline-item" data-tilt>
+                <span>03</span>
+                <div>
+                  <h3>Develop</h3>
+                  <p>Build smooth, optimized frontend experiences with HTML, CSS, JavaScript, and React.</p>
+                </div>
+              </article>
+              <article class="timeline-item" data-tilt>
+                <span>04</span>
+                <div>
+                  <h3>Launch</h3>
+                  <p>Refine details, test across devices, and deliver a client-ready web presence.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Skills</span>
+          <h2>Design taste, frontend precision, and motion that feels intentional.</h2>
+          <p>Every skill is focused on one outcome: a website that looks premium, loads fast, and works beautifully on every screen.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal" data-level="96" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="badge-code"></i>
+              <h3>HTML</h3>
+              <span>96%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+          <article class="skill-card reveal" data-level="94" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="paintbrush"></i>
+              <h3>CSS</h3>
+              <span>94%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+          <article class="skill-card reveal" data-level="88" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="braces"></i>
+              <h3>JavaScript</h3>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+          <article class="skill-card reveal" data-level="82" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="atom"></i>
+              <h3>React</h3>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+          <article class="skill-card reveal" data-level="90" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="pen-tool"></i>
+              <h3>UI/UX</h3>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+          <article class="skill-card reveal" data-level="95" data-tilt>
+            <div class="skill-top">
+              <i data-lucide="smartphone"></i>
+              <h3>Responsive Design</h3>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar"><span></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-section" id="services">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Services</span>
+          <h2>Premium web design services for brands that want to stand out.</h2>
+          <p>From a conversion-focused landing page to a complete portfolio, each service is shaped around visual quality and business clarity.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal" data-tilt>
+            <i data-lucide="monitor-cog"></i>
+            <h3>Website Design</h3>
+            <p>Modern, brand-focused website layouts with high-end visuals and strong user flow.</p>
+          </article>
+          <article class="service-card reveal" data-tilt>
+            <i data-lucide="rocket"></i>
+            <h3>Landing Pages</h3>
+            <p>Sharp landing pages designed to present offers clearly and improve conversions.</p>
+          </article>
+          <article class="service-card reveal" data-tilt>
+            <i data-lucide="code-2"></i>
+            <h3>Frontend Development</h3>
+            <p>Responsive frontend builds using clean HTML, CSS, JavaScript, and React patterns.</p>
+          </article>
+          <article class="service-card reveal" data-tilt>
+            <i data-lucide="user-round-check"></i>
+            <h3>Portfolio Websites</h3>
+            <p>Personal portfolio systems that make creators, freelancers, and professionals look premium.</p>
+          </article>
+          <article class="service-card reveal" data-tilt>
+            <i data-lucide="clapperboard"></i>
+            <h3>Video Editing</h3>
+            <p>Clean social, creator, and brand edits that support campaigns and online presence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Projects</span>
+          <h2>Selected concepts with polished visuals and client-ready structure.</h2>
+          <p>Use the filters to explore different project types, from product pages to portfolio systems and media showcases.</p>
+        </div>
+
+        <div class="project-filters reveal" aria-label="Project filters">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter-btn" type="button" data-filter="landing" aria-pressed="false">Landing</button>
+          <button class="filter-btn" type="button" data-filter="portfolio" aria-pressed="false">Portfolio</button>
+          <button class="filter-btn" type="button" data-filter="media" aria-pressed="false">Media</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card reveal" data-category="landing" data-tilt>
+            <div class="project-visual visual-one" role="img" aria-label="SaaS landing page preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Landing</p>
+              <h3>SaaS Launch Page</h3>
+              <span>Premium hero, pricing blocks, feature storytelling, and smooth conversion flow.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for SaaS Launch Page"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for SaaS Launch Page"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="portfolio" data-tilt>
+            <div class="project-visual visual-two" role="img" aria-label="Creator portfolio preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Portfolio</p>
+              <h3>Creator Portfolio System</h3>
+              <span>Dark editorial layout with project highlights, service sections, and contact funnels.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for Creator Portfolio System"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for Creator Portfolio System"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web" data-tilt>
+            <div class="project-visual visual-three" role="img" aria-label="Business website preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Web</p>
+              <h3>Business Website Redesign</h3>
+              <span>Trust-building homepage design with services, testimonials, and clean lead capture.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for Business Website Redesign"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for Business Website Redesign"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="web" data-tilt>
+            <div class="project-visual visual-four" role="img" aria-label="Interactive UI component preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Web</p>
+              <h3>Interactive UI Components</h3>
+              <span>Microinteractions, glass panels, sliders, cards, and animated interface details.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for Interactive UI Components"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for Interactive UI Components"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="media" data-tilt>
+            <div class="project-visual visual-five" role="img" aria-label="Video editing showcase preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Media</p>
+              <h3>Video Editing Showcase</h3>
+              <span>High-energy visual pacing, creator reels, product edits, and social-first composition.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for Video Editing Showcase"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for Video Editing Showcase"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="landing" data-tilt>
+            <div class="project-visual visual-six" role="img" aria-label="Conversion landing page preview">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-body">
+              <p>Landing</p>
+              <h3>Conversion Landing Page</h3>
+              <span>Offer-focused layout with motion, credibility blocks, and an action-first structure.</span>
+              <div class="project-actions">
+                <a href="#" aria-label="View live demo for Conversion Landing Page"><i data-lucide="external-link"></i> Live Demo</a>
+                <a href="#" aria-label="View GitHub for Conversion Landing Page"><i data-lucide="github"></i> GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials-section" id="testimonials">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Testimonials</span>
+          <h2>What clients expect from a premium freelancer.</h2>
+          <p>These sample testimonials show the kind of clarity, polish, and business value this portfolio is designed to communicate.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal" data-tilt>
+            <i data-lucide="quote"></i>
+            <p>Diwanshu turned our rough idea into a clean, premium landing page that made our offer feel much more trustworthy.</p>
+            <div>
+              <strong>Aarav Mehta</strong>
+              <span>Startup Founder</span>
+            </div>
+          </article>
+          <article class="testimonial-card reveal" data-tilt>
+            <i data-lucide="quote"></i>
+            <p>The portfolio design felt sharp, modern, and fast. It instantly made my personal brand look more professional.</p>
+            <div>
+              <strong>Riya Sharma</strong>
+              <span>Content Creator</span>
+            </div>
+          </article>
+          <article class="testimonial-card reveal" data-tilt>
+            <i data-lucide="quote"></i>
+            <p>Great attention to responsive details and microinteractions. The final site felt smooth on mobile and desktop.</p>
+            <div>
+              <strong>Kabir Sethi</strong>
+              <span>Business Owner</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-inner contact-inner">
+        <div class="contact-copy reveal">
+          <span class="section-kicker">Contact</span>
+          <h2>Have a project that needs a premium web presence?</h2>
+          <p>
+            Send the details and I will help shape it into a polished, responsive, client-ready website.
+          </p>
+          <div class="contact-meta" aria-label="Direct contact details">
+            <a href="mailto:diwanshu200419@gmail.com">
+              <i data-lucide="mail"></i>
+              <span>Email</span>
+              <strong>diwanshu200419@gmail.com</strong>
+            </a>
+            <a href="tel:+919816357615">
+              <i data-lucide="phone-call"></i>
+              <span>Call</span>
+              <strong>+91 9816357615</strong>
+            </a>
+          </div>
+          <div class="contact-actions">
+            <a class="btn btn-primary magnetic" href="https://wa.me/919816357615?text=Hi%20Diwanshu%2C%20I%20want%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a class="btn btn-secondary magnetic" href="tel:+919816357615">
+              <i data-lucide="phone-call"></i>
+              <span>Call Now</span>
+            </a>
+            <a class="btn btn-ghost magnetic" href="https://www.linkedin.com/in/diwans" target="_blank" rel="noopener">
+              <i data-lucide="linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="social-row" aria-label="Social links">
+            <a href="https://wa.me/919816357615" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+            <a href="tel:+919816357615" aria-label="Call Diwanshu"><i data-lucide="phone-call"></i></a>
+            <a href="https://www.linkedin.com/in/diwans" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="mailto:diwanshu200419@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+            <a href="https://www.instagram.com/diwanshu.mov/" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </label>
+          <label>
+            <span>Project Type</span>
+            <select name="project" required>
+              <option value="">Select a service</option>
+              <option>Website Design</option>
+              <option>Landing Page</option>
+              <option>Frontend Development</option>
+              <option>Portfolio Website</option>
+              <option>Video Editing</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+          </label>
+          <button class="btn btn-primary magnetic" type="submit">
+            <i data-lucide="send"></i>
+            <span>Send Message</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-inner">
+      <a class="brand" href="#home" aria-label="Back to top">
+        <span class="brand-mark">D</span>
+        <span>Diwanshu</span>
+      </a>
+      <p>&copy; 2026 Diwanshu. Helping brands build fast, clean and responsive websites.</p>
+      <div class="footer-socials">
+        <a href="mailto:diwanshu200419@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+        <a href="tel:+919816357615" aria-label="Call"><i data-lucide="phone-call"></i></a>
+        <a href="https://wa.me/919816357615" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+        <a href="https://www.linkedin.com/in/diwans" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a href="https://www.instagram.com/diwanshu.mov/" target="_blank" rel="noopener" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="script.js"></script>
+</body>
+</html>
