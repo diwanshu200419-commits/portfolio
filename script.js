@@ -165,6 +165,28 @@ function initGsapAnimations() {
     delay: 0.35
   });
 
+  safeGsap.to(".role-strip span", {
+    y: -7,
+    duration: 2.2,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    stagger: {
+      each: 0.18,
+      from: "center"
+    }
+  });
+
+  safeGsap.to(".hud-panel", {
+    x: 10,
+    y: -12,
+    duration: 3.8,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut",
+    stagger: 0.45
+  });
+
   safeGsap.utils.toArray(".section:not(.hero) .reveal").forEach((element) => {
     const animationConfig = {
       y: 54,
@@ -325,6 +347,34 @@ function initMagneticButtons() {
 
 initMagneticButtons();
 
+function initHeroParallax() {
+  if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) return;
+
+  const visual = document.querySelector(".hero-visual");
+  const items = document.querySelectorAll(".orbit-tag, .hud-panel, .profile-chip");
+
+  if (!visual || !items.length) return;
+
+  visual.addEventListener("pointermove", (event) => {
+    const rect = visual.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    items.forEach((item, index) => {
+      const depth = Number(item.dataset.depth || (index % 2 ? -0.12 : 0.12));
+      item.style.transform = `translate3d(${x * depth * 120}px, ${y * depth * 120}px, 0)`;
+    });
+  });
+
+  visual.addEventListener("pointerleave", () => {
+    items.forEach((item) => {
+      item.style.transform = "";
+    });
+  });
+}
+
+initHeroParallax();
+
 function initThreeHero() {
   const canvas = document.getElementById("heroCanvas");
   const fallback = document.getElementById("canvasFallback");
@@ -337,7 +387,7 @@ function initThreeHero() {
   const THREE = window.THREE;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-  camera.position.set(0, 0, 5.2);
+  camera.position.set(0, 0, 6.6);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -352,7 +402,7 @@ function initThreeHero() {
   const group = new THREE.Group();
   scene.add(group);
 
-  const geometry = new THREE.IcosahedronGeometry(1.55, 24);
+  const geometry = new THREE.IcosahedronGeometry(1.15, 22);
   const material = new THREE.MeshPhysicalMaterial({
     color: 0x78e7ff,
     metalness: 0.48,
@@ -387,8 +437,8 @@ function initThreeHero() {
     side: THREE.DoubleSide
   });
 
-  const ringOne = new THREE.Mesh(new THREE.TorusGeometry(2.1, 0.012, 16, 150), ringMaterial);
-  const ringTwo = new THREE.Mesh(new THREE.TorusGeometry(2.55, 0.009, 16, 150), ringMaterial.clone());
+  const ringOne = new THREE.Mesh(new THREE.TorusGeometry(1.62, 0.01, 16, 150), ringMaterial);
+  const ringTwo = new THREE.Mesh(new THREE.TorusGeometry(1.96, 0.008, 16, 150), ringMaterial.clone());
   ringOne.rotation.x = Math.PI / 2.8;
   ringTwo.rotation.y = Math.PI / 2.4;
   group.add(ringOne, ringTwo);
@@ -437,7 +487,7 @@ function initThreeHero() {
   }, { passive: true });
 
   function resizeRenderer() {
-    const rect = canvas.parentElement.getBoundingClientRect();
+    const rect = canvas.getBoundingClientRect();
     const width = Math.max(rect.width, 280);
     const height = Math.max(rect.height, 280);
     renderer.setSize(width, height, false);
