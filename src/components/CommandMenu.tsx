@@ -55,6 +55,9 @@ export default function CommandMenu() {
             } else if (k === "r") {
               nextEvent.preventDefault();
               scrollToSection("resume");
+            } else if (k === "n") {
+              nextEvent.preventDefault();
+              scrollToSection("snapshot");
             } else if (k === "x") {
               nextEvent.preventDefault();
               scrollToSection("terminal");
@@ -141,6 +144,14 @@ export default function CommandMenu() {
       icon: Compass,
       shortcut: ["G", "T"],
       action: () => scrollToSection("timeline"),
+    },
+    {
+      id: "nav-snapshot",
+      title: "Go to Resume Snapshot",
+      category: "Navigation",
+      icon: Compass,
+      shortcut: ["G", "N"],
+      action: () => scrollToSection("snapshot"),
     },
     {
       id: "nav-resume",
