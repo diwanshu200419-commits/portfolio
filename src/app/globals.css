@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #0B0F19;
+  --color-card-bg: #111827;
+  --color-border-dark: #1F2937;
+  --color-accent-purple: #7C3AED;
+  --color-accent-blue: #2563EB;
+  --color-text-white: #FFFFFF;
+  --color-text-muted: #9CA3AF;
+
+  --font-sans: var(--font-inter), "Satoshi", sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: #0B0F19;
+  color: #FFFFFF;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border: 2px solid #0B0F19;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Text Selection */
+::selection {
+  background-color: rgba(124, 58, 237, 0.3);
+  color: #FFFFFF;
+}
+
+/* Custom Grid Background Pattern (Linear-inspired) */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(31, 41, 55, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 41, 55, 0.2) 1px, transparent 1px);
+}
+
+.bg-radial-gradient-overlay {
+  background: radial-gradient(circle 800px at 50% 200px, rgba(124, 58, 237, 0.08), transparent 80%);
+}
+
+.bg-radial-gradient-card {
+  background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.06), transparent 40%);
+}
+
+/* Hide default cursor on devices that support hover if custom cursor is active */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Smooth glassmorphic navbar blurring */
+.glassmorphism {
+  background: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(31, 41, 55, 0.5);
+}
+
+/* Card hover animation border transition */
+.card-border-glow {
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-border-glow:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.1);
+}
