@@ -63,7 +63,7 @@ export default function ResumeSnapshot() {
         >
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -129,7 +129,7 @@ export default function ResumeSnapshot() {
 
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow"
           >
             <div className="flex items-center gap-2 mb-5">
               <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
@@ -164,7 +164,7 @@ export default function ResumeSnapshot() {
           {/* CARD 3: Education (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -197,7 +197,7 @@ export default function ResumeSnapshot() {
           {/* CARD 5: Career Objective (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -219,7 +219,7 @@ export default function ResumeSnapshot() {
 
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -298,7 +298,7 @@ export default function ResumeSnapshot() {
           {/* CARD 6: Currently Learning (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -337,7 +337,7 @@ export default function ResumeSnapshot() {
           {/* CARD 7: Strengths (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -413,7 +413,7 @@ export default function ResumeSnapshot() {
               <div className="flex-1 overflow-y-auto p-6 md:p-10 text-white select-text">
                 
                 {/* Embedded Printable Resume Content */}
-                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-[#0a0f1d]/50 rounded-xl">
+                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-card-bg/50 rounded-xl">
                   {/* Top info */}
                   <div className="border-b border-border-dark/80 pb-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">

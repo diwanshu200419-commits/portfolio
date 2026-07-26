@@ -205,7 +205,7 @@ export default function Hero() {
                   rotateY: rotateY,
                   transformStyle: "preserve-3d",
                 }}
-                className="relative h-full w-full rounded-2xl border border-border-dark bg-[#0a0f1d]/60 overflow-hidden shadow-2xl backdrop-blur-sm cursor-pointer select-none"
+                className="relative h-full w-full rounded-2xl border border-border-dark bg-card-bg/60 overflow-hidden shadow-2xl backdrop-blur-sm cursor-pointer select-none"
               >
                 {/* Simulated Glass Reflection Overlay */}
                 <motion.div

@@ -36,7 +36,7 @@ export default function ResumeSection() {
         </div>
 
         {/* Printable Resume Sheet */}
-        <div className="rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-8 md:p-12 shadow-2xl backdrop-blur-sm print:border-none print:bg-white print:text-black print:p-0 print:shadow-none print:rounded-none">
+        <div className="rounded-xl border border-border-dark bg-card-bg/50 p-8 md:p-12 shadow-2xl backdrop-blur-sm print:border-none print:bg-white print:text-black print:p-0 print:shadow-none print:rounded-none">
           
           {/* Print Header */}
           <div className="border-b border-border-dark/80 pb-6 print:border-black/20">

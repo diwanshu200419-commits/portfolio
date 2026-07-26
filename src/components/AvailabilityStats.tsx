@@ -133,7 +133,7 @@ export default function AvailabilityStats() {
 
           {/* Right Column - Status Card */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-xl border border-border-dark bg-[#0a0f1d]/60 p-6 shadow-xl backdrop-blur-sm card-border-glow">
+            <div className="relative rounded-xl border border-border-dark bg-card-bg/60 p-6 shadow-xl backdrop-blur-sm card-border-glow">
               {/* Pulsing Availability Badge */}
               <div className="flex items-center justify-between border-b border-border-dark/45 pb-4 mb-4">
                 <span className="font-mono text-[9px] text-text-muted uppercase tracking-wider">
@@ -201,7 +201,7 @@ export default function AvailabilityStats() {
                 key={idx}
                 variants={itemVariants}
                 onClick={() => hasAction && stat.action()}
-                className={`relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between ${
+                className={`relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between ${
                   hasAction ? "cursor-pointer" : ""
                 }`}
               >
@@ -267,7 +267,7 @@ export default function AvailabilityStats() {
         </div>
 
         {/* Call to Action Block */}
-        <div className="rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-8 md:p-12 shadow-2xl backdrop-blur-sm">
+        <div className="rounded-xl border border-border-dark bg-card-bg/50 p-8 md:p-12 shadow-2xl backdrop-blur-sm">
           <div className="max-w-3xl">
             <h4 className="font-display text-xl font-bold tracking-tight text-white sm:text-2xl mb-4">
               Let&apos;s Build Something Meaningful Together
@@ -377,7 +377,7 @@ export default function AvailabilityStats() {
 
               {/* Modal Content - Scrollable Resume Sheet */}
               <div className="flex-1 overflow-y-auto p-6 md:p-10 text-white select-text">
-                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-[#0a0f1d]/50 rounded-xl">
+                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-card-bg/50 rounded-xl">
                   {/* Top info */}
                   <div className="border-b border-border-dark/80 pb-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">

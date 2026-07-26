@@ -205,7 +205,7 @@ export default function Projects() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 220 }}
-              className="relative h-full w-full max-w-2xl border-l border-border-dark bg-[#0a0e17] shadow-2xl flex flex-col overflow-hidden"
+              className="relative h-full w-full max-w-2xl border-l border-border-dark bg-card-bg shadow-2xl flex flex-col overflow-hidden"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b border-border-dark bg-black/30 px-6 py-4.5">
