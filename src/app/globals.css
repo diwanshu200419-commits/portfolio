@@ -150,6 +150,6 @@ body {
 }
 
 .card-border-glow:hover {
-  border-color: rgba(99, 102, 241, 0.35);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.03);
+  border-color: var(--accent-purple);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.08);
 }

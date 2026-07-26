@@ -127,6 +127,25 @@ export default function Hero() {
               I am a Software Engineer and Full Stack Developer. I build modern web applications and AI-powered digital products that combine Vercel-level speed with custom design details inspired by Stripe and Apple.
             </motion.p>
 
+            {/* Interactive Command Shortcut Reminder */}
+            <motion.div
+              variants={itemVariants}
+              className="hidden sm:flex items-center gap-2 rounded-full border border-border-dark bg-card-bg/40 px-3.5 py-1 text-[10px] font-mono text-text-muted mb-6 select-none"
+            >
+              <span className="flex h-1.5 w-1.5 rounded-full bg-accent-purple animate-pulse" />
+              <span>
+                Tip: Press{" "}
+                <kbd className="rounded bg-border-dark px-1.5 py-0.5 text-[9px] font-semibold text-text-white shadow-sm">
+                  ⌘K
+                </kbd>{" "}
+                or{" "}
+                <kbd className="rounded bg-border-dark px-1.5 py-0.5 text-[9px] font-semibold text-text-white shadow-sm">
+                  Ctrl+K
+                </kbd>{" "}
+                to launch the control center.
+              </span>
+            </motion.div>
+
             {/* Action Buttons Grid */}
             <motion.div
               variants={itemVariants}
