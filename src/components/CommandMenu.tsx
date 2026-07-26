@@ -58,6 +58,9 @@ export default function CommandMenu() {
             } else if (k === "n") {
               nextEvent.preventDefault();
               scrollToSection("snapshot");
+            } else if (k === "v") {
+              nextEvent.preventDefault();
+              scrollToSection("availability");
             } else if (k === "x") {
               nextEvent.preventDefault();
               scrollToSection("terminal");
@@ -144,6 +147,14 @@ export default function CommandMenu() {
       icon: Compass,
       shortcut: ["G", "T"],
       action: () => scrollToSection("timeline"),
+    },
+    {
+      id: "nav-availability",
+      title: "Go to Availability Status",
+      category: "Navigation",
+      icon: Compass,
+      shortcut: ["G", "V"],
+      action: () => scrollToSection("availability"),
     },
     {
       id: "nav-snapshot",

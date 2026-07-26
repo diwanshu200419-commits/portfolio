@@ -17,6 +17,7 @@ export default function Navbar() {
 
   const navLinks: NavLink[] = [
     { label: "Home", href: "#hero", id: "hero" },
+    { label: "Availability", href: "#availability", id: "availability" },
     { label: "Snapshot", href: "#snapshot", id: "snapshot" },
     { label: "About", href: "#about", id: "about" },
     { label: "Projects", href: "#projects", id: "projects" },

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import AvailabilityStats from "@/components/AvailabilityStats";
 import ResumeSnapshot from "@/components/ResumeSnapshot";
 import About from "@/components/About";
 import Projects from "@/components/Projects";
@@ -30,6 +31,7 @@ export default function Home() {
       {/* Core Page Content */}
       <main className="flex-grow">
         <Hero />
+        <AvailabilityStats />
         <ResumeSnapshot />
         <About />
         <Projects />
