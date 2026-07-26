@@ -21,7 +21,7 @@ export default function Testimonials() {
         {/* Empty State Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Card 1 */}
-          <div className="relative rounded-xl border border-dashed border-border-dark/80 bg-[#111827]/5 p-8 flex flex-col justify-between min-h-[180px]">
+          <div className="relative rounded-xl border border-dashed border-border-dark/80 bg-card-bg/5 p-8 flex flex-col justify-between min-h-[180px]">
             <div>
               <Quote className="h-6 w-6 text-border-dark mb-4" />
               <p className="text-xs italic text-text-muted/60 leading-relaxed">
@@ -40,7 +40,7 @@ export default function Testimonials() {
           </div>
 
           {/* Card 2 */}
-          <div className="relative rounded-xl border border-dashed border-border-dark/80 bg-[#111827]/5 p-8 flex flex-col justify-between min-h-[180px]">
+          <div className="relative rounded-xl border border-dashed border-border-dark/80 bg-card-bg/5 p-8 flex flex-col justify-between min-h-[180px]">
             <div>
               <Quote className="h-6 w-6 text-border-dark mb-4" />
               <p className="text-xs italic text-text-muted/60 leading-relaxed">
@@ -60,7 +60,7 @@ export default function Testimonials() {
         </div>
 
         {/* Submit review callout */}
-        <div className="mt-10 rounded-xl border border-border-dark bg-[#111827]/20 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="mt-10 rounded-xl border border-border-dark bg-card-bg/20 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3">
             <MessageSquareDashed className="h-5 w-5 text-accent-blue" />
             <div>

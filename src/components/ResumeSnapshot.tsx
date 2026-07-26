@@ -384,7 +384,7 @@ export default function ResumeSnapshot() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-4xl h-[85vh] bg-[#050816] rounded-2xl border border-border-dark flex flex-col shadow-2xl overflow-hidden"
+              className="relative w-full max-w-4xl h-[85vh] bg-primary-bg rounded-2xl border border-border-dark flex flex-col shadow-2xl overflow-hidden"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b border-border-dark/60 bg-black/40 px-6 py-4">

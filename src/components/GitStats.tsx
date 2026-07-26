@@ -93,7 +93,7 @@ export default function GitStats() {
           <div className="lg:col-span-8 space-y-6">
             
             {/* Contribution Matrix Container */}
-            <div className="rounded-xl border border-border-dark bg-[#111827]/10 p-6 backdrop-blur-sm">
+            <div className="rounded-xl border border-border-dark bg-card-bg/10 p-6 backdrop-blur-sm">
               <div className="flex items-center justify-between gap-4 mb-6">
                 <div className="flex items-center gap-2 text-xs text-white">
                   <Calendar className="h-4 w-4 text-accent-purple" />
@@ -161,7 +161,7 @@ export default function GitStats() {
               {pinnedRepos.map((repo) => (
                 <div
                   key={repo.name}
-                  className="rounded-xl border border-border-dark bg-[#111827]/10 p-5 backdrop-blur-sm transition-all duration-300 hover:border-border-dark/80 hover:bg-[#111827]/30 flex flex-col justify-between"
+                  className="rounded-xl border border-border-dark bg-card-bg/10 p-5 backdrop-blur-sm transition-all duration-300 hover:border-border-dark/80 hover:bg-card-bg/30 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
@@ -206,7 +206,7 @@ export default function GitStats() {
           </div>
 
           {/* Right Block - Top Languages breakdown */}
-          <div className="lg:col-span-4 rounded-xl border border-border-dark bg-[#111827]/10 p-6 backdrop-blur-sm h-full flex flex-col justify-between">
+          <div className="lg:col-span-4 rounded-xl border border-border-dark bg-card-bg/10 p-6 backdrop-blur-sm h-full flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <GitHubIcon className="h-5 w-5 text-text-white" />

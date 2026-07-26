@@ -75,7 +75,7 @@ export default function About() {
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                className="group relative rounded-xl border border-border-dark bg-[#111827]/40 p-6 transition-all duration-300 hover:border-accent-purple/50 hover:bg-[#111827]/80 hover:shadow-lg"
+                className="group relative rounded-xl border border-border-dark bg-card-bg/40 p-6 transition-all duration-300 hover:border-accent-purple/50 hover:bg-card-bg/80 hover:shadow-lg"
               >
                 <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-accent-purple/10 text-accent-purple transition-all duration-300 group-hover:bg-accent-purple group-hover:text-white">
                   <Icon className="h-5 w-5" />

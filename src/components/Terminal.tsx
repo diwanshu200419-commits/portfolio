@@ -154,8 +154,8 @@ export default function Terminal() {
                     : line.type === "system"
                     ? "text-[#64748b]"
                     : line.type === "input"
-                    ? "text-white"
-                    : "text-text-muted"
+                    ? "text-[#fafafa]"
+                    : "text-[#a1a1aa]"
                 }
               >
                 {line.text}
@@ -163,7 +163,7 @@ export default function Terminal() {
             ))}
 
             {/* Input Form Prompt */}
-            <form onSubmit={handleCommand} className="flex items-center text-white pt-1">
+            <form onSubmit={handleCommand} className="flex items-center text-[#fafafa] pt-1">
               <span className="text-accent-purple font-semibold mr-1.5 shrink-0 select-none">
                 guest@diwanshu:~$
               </span>
@@ -181,7 +181,7 @@ export default function Terminal() {
                   spellCheck="false"
                 />
                 {/* Visual rendering of typed value and blinking cursor */}
-                <span className="text-white select-none whitespace-pre break-all pointer-events-none">
+                <span className="text-[#fafafa] select-none whitespace-pre break-all pointer-events-none">
                   {inputVal}
                 </span>
                 <span className="h-3.5 w-1.5 bg-accent-blue animate-pulse ml-0.5 pointer-events-none" />

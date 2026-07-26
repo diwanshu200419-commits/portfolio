@@ -94,7 +94,7 @@ export default function Skills() {
                         className={`flex items-center gap-3.5 rounded-lg border p-3 text-left transition-all duration-200 cursor-pointer ${
                           isCurrent
                             ? "border-accent-purple bg-accent-purple/10 shadow-lg shadow-accent-purple/5"
-                            : "border-border-dark bg-[#111827]/20 hover:border-border-dark/80 hover:bg-[#111827]/40"
+                            : "border-border-dark bg-card-bg/20 hover:border-border-dark/80 hover:bg-card-bg/40"
                         }`}
                       >
                         <div
@@ -119,7 +119,7 @@ export default function Skills() {
 
           {/* Right Column: Dynamic Insight Panel */}
           <div className="lg:col-span-4 lg:sticky lg:top-24">
-            <div className="rounded-xl border border-border-dark bg-[#111827]/30 p-6 backdrop-blur-md">
+            <div className="rounded-xl border border-border-dark bg-card-bg/30 p-6 backdrop-blur-md">
               <h4 className="flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider text-text-white mb-4">
                 <Code2 className="h-4.5 w-4.5 text-accent-blue" />
                 <span>Production Implementation</span>

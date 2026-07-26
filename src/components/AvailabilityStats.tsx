@@ -233,8 +233,8 @@ export default function AvailabilityStats() {
 
         {/* Tech Stack Marquee Strip */}
         <div className="relative border-t border-border-dark/65 py-5 mb-4 overflow-hidden select-none">
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050816] to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050816] to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-primary-bg to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-primary-bg to-transparent z-10" />
           
           <div className="flex gap-3 animate-marquee-fast whitespace-nowrap">
             {[...techStack, ...techStack].map((tech, idx) => (
@@ -250,8 +250,8 @@ export default function AvailabilityStats() {
 
         {/* Highlight Strip */}
         <div className="relative border-b border-border-dark/65 py-5 mb-16 overflow-hidden select-none">
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#050816] to-transparent z-10" />
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#050816] to-transparent z-10" />
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-primary-bg to-transparent z-10" />
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-primary-bg to-transparent z-10" />
           
           <div className="flex gap-4 animate-marquee-slow whitespace-nowrap">
             {[...highlights, ...highlights].map((chip, idx) => (
@@ -350,7 +350,7 @@ export default function AvailabilityStats() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 15 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-4xl h-[85vh] bg-[#050816] rounded-2xl border border-border-dark flex flex-col shadow-2xl overflow-hidden"
+              className="relative w-full max-w-4xl h-[85vh] bg-primary-bg rounded-2xl border border-border-dark flex flex-col shadow-2xl overflow-hidden"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b border-border-dark/60 bg-black/40 px-6 py-4">
