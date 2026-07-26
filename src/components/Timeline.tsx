@@ -2,14 +2,15 @@
 
 import { motion } from "framer-motion";
 import { timelineItems } from "@/data/timeline";
-import { Briefcase, Code, Layout, Globe, BookOpen, HelpCircle } from "lucide-react";
+import { Briefcase, Code, Layout, Globe, BookOpen, GraduationCap, HelpCircle } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Briefcase,
   Code,
   Layout,
   Globe,
-  BookOpen
+  BookOpen,
+  GraduationCap
 };
 
 export default function Timeline() {

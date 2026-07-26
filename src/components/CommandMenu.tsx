@@ -52,6 +52,12 @@ export default function CommandMenu() {
             } else if (k === "t") {
               nextEvent.preventDefault();
               scrollToSection("timeline");
+            } else if (k === "r") {
+              nextEvent.preventDefault();
+              scrollToSection("resume");
+            } else if (k === "x") {
+              nextEvent.preventDefault();
+              scrollToSection("terminal");
             }
             window.removeEventListener("keydown", handleNextKey);
           };
@@ -135,6 +141,22 @@ export default function CommandMenu() {
       icon: Compass,
       shortcut: ["G", "T"],
       action: () => scrollToSection("timeline"),
+    },
+    {
+      id: "nav-resume",
+      title: "Go to Resume Details",
+      category: "Navigation",
+      icon: Compass,
+      shortcut: ["G", "R"],
+      action: () => scrollToSection("resume"),
+    },
+    {
+      id: "nav-terminal",
+      title: "Go to Interactive Shell",
+      category: "Navigation",
+      icon: Compass,
+      shortcut: ["G", "X"],
+      action: () => scrollToSection("terminal"),
     },
     {
       id: "nav-contact",

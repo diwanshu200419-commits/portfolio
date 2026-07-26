@@ -8,32 +8,44 @@ export interface TimelineItem {
 export const timelineItems: TimelineItem[] = [
   {
     year: "Present",
-    title: "Full-Stack Engineer & AI Dev",
-    description: "Actively building AI-integrated products (SmartDollar Labs, AI Resume Critic) utilizing Next.js, Gemini API, and MongoDB. Open to full-time Software Engineering roles.",
+    title: "Looking for Software Engineering Opportunities",
+    description: "Actively interviewing for software developer roles. Ready to deploy full-stack architectures, API logic, and AI integrations at your scale.",
     iconName: "Briefcase"
   },
   {
-    year: "Late 2025",
-    title: "Advanced Full-Stack Engineering",
-    description: "Mastered Node.js, Express, databases, and third-party API integrations. Developed e-commerce models and full-stack marketplaces with Stripe payment flow.",
+    year: "Mid 2026",
+    title: "Building Full Stack Applications",
+    description: "Orchestrating databases (MongoDB, Supabase), building modular server controllers in Express, and designing client states with Next.js App Router.",
     iconName: "Code"
   },
   {
-    year: "Mid 2025",
-    title: "First Complex Frontend Builds",
-    description: "Built advanced React websites with fluid animations and responsive grids. Shifted focus to performance scoring (Lighthouse) and pixel-perfect design.",
-    iconName: "Layout"
+    year: "Early 2026",
+    title: "Graduated BCA",
+    description: "Graduated with a Bachelor of Computer Applications degree, cementing foundation rules of databases, networking, OOP, and data structures.",
+    iconName: "GraduationCap"
   },
   {
-    year: "Early 2025",
-    title: "First Website Launched",
-    description: "Learned the foundational pillars (HTML, CSS, JavaScript) and launched local client projects like Kulja Motors, helping local businesses establish online visibility.",
+    year: "Late 2025",
+    title: "Learned AI Development",
+    description: "Integrated generative models (Google Gemini API) to build intelligent workflows, semantic features, and automated finance categorizations.",
+    iconName: "Brain"
+  },
+  {
+    year: "Mid 2025",
+    title: "Built Real Business Websites",
+    description: "Developed and launched production catalog systems for local dealers (Kulja Motors) and service providers, improving lead collection by 40%.",
     iconName: "Globe"
   },
   {
+    year: "Early 2025",
+    title: "Built My First Website",
+    description: "Mastered HTML, CSS, JavaScript basics and launched initial static visual sites focusing on page responsiveness and layout flow.",
+    iconName: "Layout"
+  },
+  {
     year: "2024",
-    title: "Started Programming Journey",
-    description: "Wrote first lines of code. Dived deep into data structures, algorithms, and logical problem solving, discovering a passion for building interactive products.",
+    title: "Started Learning Programming",
+    description: "Wrote first lines of code. Dived deep into programming logic, syntax, data structures, and computer science basics.",
     iconName: "BookOpen"
   }
 ];

@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     id: "resume-builder",
-    title: "AI Resume Architect",
+    title: "Resume Builder",
     tagline: "ATS-Optimized Real-time Resume Generator & Critic",
     liveUrl: "https://resume-builder-murex-mu.vercel.app/",
     githubUrl: "https://github.com/diwanshu200419-commits/resume-builder",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
   },
   {
     id: "travel-website",
-    title: "AuraTravels",
+    title: "Guru Kripa Travels",
     tagline: "Fluid, Cinematic Travel Planner & Discovery Hub",
     liveUrl: "https://guru-henna-psi.vercel.app/",
     githubUrl: "https://github.com/diwanshu200419-commits/guru-travel",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
   },
   {
     id: "interior-decor",
-    title: "Minimalist Decors",
+    title: "Interior Website",
     tagline: "Aesthetic Catalog & Architectural Consultant Booking",
     liveUrl: "https://decor-tqh5.vercel.app/",
     githubUrl: "https://github.com/diwanshu200419-commits/decor",
