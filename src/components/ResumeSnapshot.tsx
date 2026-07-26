@@ -37,7 +37,7 @@ export default function ResumeSnapshot() {
   };
 
   return (
-    <section id="snapshot" className="relative border-t border-border-dark/60 bg-black/10 py-24 md:py-32 print:hidden">
+    <section id="snapshot" className="relative border-t border-border-dark/60 bg-black/5 py-24 md:py-32 print:hidden">
       <div className="mx-auto max-w-6xl px-6">
         
         {/* Section Heading */}
@@ -49,7 +49,7 @@ export default function ResumeSnapshot() {
             Resume Snapshot
           </h3>
           <p className="mt-3 text-sm text-text-muted">
-            Everything you need to know about my engineering profile in less than 30 seconds.
+            A quick overview of my background, skills, and current roadmap.
           </p>
         </div>
 
@@ -61,9 +61,10 @@ export default function ResumeSnapshot() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
+          {/* CARD 1: Professional Summary (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -75,18 +76,19 @@ export default function ResumeSnapshot() {
                 </h4>
               </div>
               <p className="text-xs leading-relaxed text-text-white font-sans">
-                I am a Software Engineer specializing in full-stack systems architecture, performance optimization, and design engineering. I approach product development with a systems mindset—balancing pixel-perfect design aesthetics with low-latency server APIs, database schema refinement, and secure client-server authentication. My focus centers on building clean, maintainable code structures and shipping reliable, lightning-fast web deployments.
+                I am a graduate in Computer Applications (BCA &apos;26). I build full-stack web applications using JavaScript and TypeScript ecosystems. I focus on writing clean, readable code, organizing databases, and building responsive user interfaces. I enjoy working on tools that solve practical problems and deliver useful outcomes.
               </p>
             </div>
             <div className="mt-4 border-t border-border-dark/40 pt-4 flex items-center justify-between text-[9px] font-mono text-text-muted">
-              <span>Mindset: Product-driven Engineering</span>
-              <span>Focus: Full-Stack & AI</span>
+              <span>Approach: Clean & Functional</span>
+              <span>Focus: Full-Stack JavaScript</span>
             </div>
           </motion.div>
 
+          {/* CARD 8: Resume Actions (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -98,7 +100,7 @@ export default function ResumeSnapshot() {
                 </h4>
               </div>
               <p className="text-xs text-text-muted mb-6 leading-relaxed">
-                Need a copy for your applicant tracking system or client review? Open the live PDF viewer immediately or print/download a standard PDF copy.
+                You can view my complete, structured experience sheet here or save it as an ATS-friendly PDF copy.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
@@ -123,13 +125,14 @@ export default function ResumeSnapshot() {
             <div className="border-t border-border-dark/40 pt-4 flex flex-wrap items-center justify-between gap-2 text-[9px] font-mono text-text-muted">
               <span>Last Updated: July 2026</span>
               <span>Size: ~120 KB</span>
-              <span>Version: v2.4.0</span>
+              <span>Status: Verified Sheet</span>
             </div>
           </motion.div>
 
+          {/* CARD 2: Technical Skills (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow"
           >
             <div className="flex items-center gap-2 mb-5">
               <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
@@ -164,7 +167,7 @@ export default function ResumeSnapshot() {
           {/* CARD 3: Education (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -187,17 +190,15 @@ export default function ResumeSnapshot() {
                 </div>
               </div>
             </div>
-
-            <div className="mt-4 border-t border-border-dark/40 pt-3 flex items-center justify-between text-[10px] font-mono text-accent-blue">
-              <span>Score / GPA:</span>
-              <strong>7.03 CGPA</strong>
+            <div className="mt-4 border-t border-border-dark/40 pt-3 text-[9px] font-mono text-text-muted">
+              <span>Focus: Computer Science Basics</span>
             </div>
           </motion.div>
 
           {/* CARD 5: Career Objective (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -205,21 +206,22 @@ export default function ResumeSnapshot() {
                   <Target className="h-4.5 w-4.5" />
                 </div>
                 <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-                  Career Objective
+                  Career Goal
                 </h4>
               </div>
               <p className="text-xs leading-relaxed text-text-muted font-sans mt-3">
-                My goal is to join a product-driven engineering team where I can build scalable software, contribute to real-world applications, continuously improve my technical skills, and create meaningful digital experiences that make a positive impact.
+                My goal is to start my professional career as a junior developer or software engineer intern. I want to work with collaborative teams where I can learn from experienced engineers, contribute to real-world codebases, and write clean, maintainable software.
               </p>
             </div>
             <div className="mt-4 border-t border-border-dark/40 pt-3 text-[10px] font-mono text-text-muted">
-              <span>Target Roles: SDE, Frontend, Full-Stack</span>
+              <span>Target: Junior Dev / SDE Intern</span>
             </div>
           </motion.div>
 
+          {/* CARD 4: Featured Projects (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -227,7 +229,7 @@ export default function ResumeSnapshot() {
                   <Briefcase className="h-4.5 w-4.5" />
                 </div>
                 <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-                  Featured Projects Selector
+                  Projects Quick Selector
                 </h4>
               </div>
 
@@ -237,10 +239,10 @@ export default function ResumeSnapshot() {
                   <button
                     key={proj.id}
                     onClick={() => setSelectedProjectIdx(idx)}
-                    className={`px-3 py-1 rounded text-[10px] font-mono shrink-0 transition-colors cursor-pointer ${
-                      selectedProjectIdx === idx 
-                        ? "bg-highlight-cyan/10 border border-highlight-cyan/30 text-highlight-cyan" 
-                        : "bg-border-dark/20 border border-border-dark/40 text-text-muted hover:text-white"
+                    className={`px-3 py-1 rounded text-[10px] font-mono whitespace-nowrap cursor-pointer transition-colors ${
+                      selectedProjectIdx === idx
+                        ? "bg-accent-purple/10 border border-accent-purple/35 text-white"
+                        : "bg-border-dark/20 border border-transparent text-text-muted hover:text-white"
                     }`}
                   >
                     {proj.title}
@@ -298,7 +300,7 @@ export default function ResumeSnapshot() {
           {/* CARD 6: Currently Learning (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -314,30 +316,30 @@ export default function ResumeSnapshot() {
               <div className="relative border-l border-border-dark pl-3 mt-4 space-y-3 text-[10px]">
                 <div className="relative">
                   <span className="absolute -left-[16px] top-1.5 h-1.5 w-1.5 rounded-full bg-highlight-cyan animate-pulse" />
-                  <span className="font-semibold text-white block">AI Engineering & ML</span>
-                  <span className="text-text-muted block text-[9px]">Model parameter optimizations, cognitive agents</span>
+                  <span className="font-semibold text-white block">SQL Databases</span>
+                  <span className="text-text-muted block text-[9px]">Learning indexing, joins, and normalizations</span>
                 </div>
                 <div className="relative">
                   <span className="absolute -left-[16px] top-1.5 h-1.5 w-1.5 rounded-full bg-border-dark" />
-                  <span className="font-semibold text-text-muted block">System Design & DSA</span>
-                  <span className="text-text-muted block text-[9px]">Advanced routing, patterns, algorithms caching</span>
+                  <span className="font-semibold text-text-muted block">React State</span>
+                  <span className="text-text-muted block text-[9px]">Learning Context API and Redux Toolkit dynamics</span>
                 </div>
                 <div className="relative">
                   <span className="absolute -left-[16px] top-1.5 h-1.5 w-1.5 rounded-full bg-border-dark" />
-                  <span className="font-semibold text-text-muted block">Data Analytics</span>
-                  <span className="text-text-muted block text-[9px]">Python scripts, SQL queries, Power BI</span>
+                  <span className="font-semibold text-text-muted block">Linux CLI</span>
+                  <span className="text-text-muted block text-[9px]">Writing simple bash scripts and configuring hooks</span>
                 </div>
               </div>
             </div>
             <div className="mt-4 border-t border-border-dark/40 pt-3 text-[9px] font-mono text-text-muted">
-              <span>Goal: System Architecture Depth</span>
+              <span>Goal: Full-Stack Foundation</span>
             </div>
           </motion.div>
 
           {/* CARD 7: Strengths (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -345,12 +347,12 @@ export default function ResumeSnapshot() {
                   <Award className="h-4.5 w-4.5" />
                 </div>
                 <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-                  Core Strengths
+                  Developer Traits
                 </h4>
               </div>
 
               <div className="grid grid-cols-2 gap-2 mt-4 text-[10px] font-mono">
-                {["Quick Learner", "Problem Solver", "Self Motivated", "Team Player", "Adaptability", "Continuous Learning"].map((strength) => (
+                {["Writing Clean Code", "Responsive Layouts", "Debugging", "Reading Docs", "Collaborative Spirit", "Curiosity"].map((strength) => (
                   <div 
                     key={strength}
                     className="flex items-center gap-1.5 rounded bg-border-dark/20 border border-border-dark/30 px-2 py-1 text-text-muted hover:border-highlight-cyan/20 hover:text-white transition-all"
@@ -363,7 +365,7 @@ export default function ResumeSnapshot() {
             </div>
 
             <div className="mt-4 border-t border-border-dark/40 pt-3 text-[9px] font-mono text-text-muted">
-              <span>Work Ethic: Rigorous & Agile</span>
+              <span>Work Ethic: Transparent & Reliable</span>
             </div>
           </motion.div>
         </motion.div>
@@ -377,108 +379,123 @@ export default function ResumeSnapshot() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 md:p-10 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 md:p-10 backdrop-blur-sm"
           >
             <motion.div 
-              initial={{ scale: 0.95, y: 15 }}
+              initial={{ scale: 0.96, y: 15 }}
               animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 15 }}
+              exit={{ scale: 0.96, y: 15 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="relative w-full max-w-4xl h-[85vh] bg-primary-bg rounded-2xl border border-border-dark flex flex-col shadow-2xl overflow-hidden"
             >
               {/* Modal Header */}
               <div className="flex items-center justify-between border-b border-border-dark/60 bg-black/40 px-6 py-4">
                 <div className="flex items-center gap-2">
-                  <FileText className="h-4.5 w-4.5 text-accent-purple" />
                   <span className="font-display font-bold text-white text-sm">Resume Document Viewer</span>
+                  <span className="rounded bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 text-[9px] font-mono text-emerald-400">
+                    Printable
+                  </span>
                 </div>
-                <div className="flex items-center gap-3">
+                
+                <div className="flex items-center gap-2">
                   <button
                     onClick={handlePrint}
                     className="flex items-center gap-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 px-3 py-1.5 text-xs text-white transition-colors cursor-pointer"
                   >
-                    <Download className="h-3.5 w-3.5" />
-                    <span>Print/Save PDF</span>
+                    <Download className="h-3 w-3" />
+                    <span>Print PDF</span>
                   </button>
-                  <button
+                  
+                  <button 
                     onClick={() => setIsModalOpen(false)}
                     className="rounded-lg p-1.5 text-text-muted hover:bg-white/10 hover:text-white transition-all cursor-pointer"
                   >
-                    <X className="h-4.5 w-4.5" />
+                    <X className="h-4 w-4" />
                   </button>
                 </div>
               </div>
 
               {/* Modal Content - Scrollable Resume Sheet */}
               <div className="flex-1 overflow-y-auto p-6 md:p-10 text-white select-text">
-                
-                {/* Embedded Printable Resume Content */}
                 <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-card-bg/50 rounded-xl">
                   {/* Top info */}
                   <div className="border-b border-border-dark/80 pb-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                       <div>
                         <h4 className="font-display text-2xl font-black text-white">{resumeData.personalInfo.name}</h4>
-                        <p className="text-sm font-semibold text-accent-purple mt-1">{resumeData.personalInfo.title}</p>
+                        <p className="text-xs font-semibold text-accent-purple mt-1">{resumeData.personalInfo.title}</p>
+                        <p className="text-[10px] text-text-muted mt-2 font-mono">{resumeData.personalInfo.location}</p>
                       </div>
-                      <div className="text-xs text-text-muted space-y-1 font-mono text-left sm:text-right">
+                      <div className="text-left sm:text-right text-[10px] font-mono space-y-1 text-text-muted">
                         <p>{resumeData.personalInfo.email}</p>
                         <p>{resumeData.personalInfo.phone}</p>
-                        <p>{resumeData.personalInfo.location}</p>
+                        <p>{resumeData.personalInfo.github}</p>
+                        <p>{resumeData.personalInfo.linkedin}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-6">
-                    <div className="space-y-1.5">
-                      <strong className="text-xs text-accent-blue font-bold uppercase tracking-wider block">Summary</strong>
-                      <p className="text-xs text-text-muted leading-relaxed">{resumeData.summary}</p>
-                    </div>
+                  {/* Summary */}
+                  <div className="py-6 border-b border-border-dark/80">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Professional Summary</h5>
+                    <p className="text-xs leading-relaxed text-text-muted font-sans">{resumeData.summary}</p>
+                  </div>
 
-                    <div className="space-y-2">
-                      <strong className="text-xs text-accent-blue font-bold uppercase tracking-wider block">Skills</strong>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        {resumeData.skills.map((s) => (
-                          <div key={s.category}>
-                            <span className="font-semibold text-white text-[11px]">{s.category}: </span>
-                            <span className="text-text-muted font-mono text-[11px]">{s.items.join(", ")}</span>
-                          </div>
-                        ))}
+                  {/* Education */}
+                  <div className="py-6 border-b border-border-dark/80">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Education</h5>
+                    {resumeData.education.map((edu, idx) => (
+                      <div key={idx} className="space-y-1">
+                        <div className="flex justify-between items-baseline text-xs font-bold">
+                          <span className="text-white">{edu.degree}</span>
+                          <span className="font-mono text-[10px] text-text-muted font-normal">{edu.period}</span>
+                        </div>
+                        <p className="text-[10px] text-accent-purple font-semibold">{edu.institution}</p>
+                        <p className="text-[10px] text-text-muted mt-1 font-sans">{edu.details}</p>
                       </div>
-                    </div>
+                    ))}
+                  </div>
 
-                    <div className="space-y-4">
-                      <strong className="text-xs text-accent-blue font-bold uppercase tracking-wider block">Projects</strong>
-                      <div className="space-y-3">
-                        {resumeData.projects.map((p) => (
-                          <div key={p.name} className="border-l border-border-dark pl-3">
-                            <div className="flex justify-between items-center text-xs">
-                              <strong className="text-white">{p.name}</strong>
-                              <span className="text-[9px] font-mono text-text-muted">{p.period}</span>
-                            </div>
-                            <span className="text-[10px] text-accent-purple block mt-0.5">{p.role}</span>
-                            <p className="text-[11px] text-text-muted mt-1">{p.description}</p>
+                  {/* Skills Grid */}
+                  <div className="py-6 border-b border-border-dark/80">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Technical Stack</h5>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {resumeData.skills.map((s, idx) => (
+                        <div key={idx} className="space-y-1">
+                          <span className="font-semibold text-white text-[11px] block">{s.category}</span>
+                          <div className="flex flex-wrap gap-1.5 mt-1">
+                            {s.items.map((it) => (
+                              <span key={it} className="rounded bg-border-dark/30 border border-border-dark/40 px-2 py-0.5 text-[9px] font-mono text-text-muted">{it}</span>
+                            ))}
                           </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <strong className="text-xs text-accent-blue font-bold uppercase tracking-wider block">Education</strong>
-                      {resumeData.education.map((e) => (
-                        <div key={e.degree} className="border-l border-border-dark pl-3 text-xs">
-                          <div className="flex justify-between items-center">
-                            <strong className="text-white">{e.degree}</strong>
-                            <span className="text-[9px] font-mono text-text-muted">{e.period}</span>
-                          </div>
-                          <span className="text-[10px] text-accent-purple block mt-0.5">{e.institution}</span>
-                          <p className="text-[11px] text-text-muted mt-1">{e.details}</p>
                         </div>
                       ))}
                     </div>
                   </div>
-                </div>
 
+                  {/* Projects */}
+                  <div className="py-6">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Featured Projects</h5>
+                    <div className="space-y-6">
+                      {resumeData.projects.map((p, idx) => (
+                        <div key={idx} className="space-y-1.5">
+                          <div className="flex justify-between items-baseline text-xs font-bold">
+                            <span className="text-white">{p.name}</span>
+                            <span className="font-mono text-[10px] text-text-muted font-normal">{p.period}</span>
+                          </div>
+                          <p className="text-[10px] text-accent-purple font-semibold">{p.role}</p>
+                          <p className="text-[10px] text-text-muted leading-relaxed font-sans">{p.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mt-2">
+                            {p.tech.map((t) => (
+                              <span key={t} className="rounded bg-border-dark/20 px-2 py-0.5 text-[9px] font-mono text-text-muted">{t}</span>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </motion.div>
           </motion.div>

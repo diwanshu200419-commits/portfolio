@@ -278,11 +278,11 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Business Impact banner */}
+                {/* Project Outcome banner */}
                 <div className="rounded-lg border border-accent-blue/30 bg-accent-blue/5 p-5">
                   <h5 className="flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-2">
                     <Info className="h-4 w-4" />
-                    <span>Impact &amp; Results</span>
+                    <span>Project Outcome</span>
                   </h5>
                   <p className="text-xs font-semibold text-white/90 leading-relaxed">
                     {activeProject.impact}
@@ -309,7 +309,7 @@ export default function Projects() {
                   <div>
                     <h5 className="flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wider text-text-muted mb-3">
                       <Cpu className="h-4 w-4 text-accent-purple" />
-                      <span>Engineering Challenges</span>
+                      <span>The Biggest Challenge</span>
                     </h5>
                     <p className="text-xs leading-relaxed text-text-muted">
                       {activeProject.challenges}

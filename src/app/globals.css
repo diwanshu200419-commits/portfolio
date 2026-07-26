@@ -119,12 +119,12 @@ body {
 .bg-grid-pattern {
   background-size: 50px 50px;
   background-image: 
-    linear-gradient(to right, rgba(63, 63, 70, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(63, 63, 70, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(120, 120, 120, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 120, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-gradient-overlay {
-  background: radial-gradient(circle 800px at 50% 200px, rgba(99, 102, 241, 0.03), transparent 80%);
+  background: transparent;
 }
 
 /* Hide default cursor on devices that support hover if custom cursor is active */
@@ -137,19 +137,18 @@ body {
 
 /* Smooth glassmorphic navbar blurring */
 .glassmorphism {
-  background: rgba(9, 9, 11, 0.8);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+  background: var(--primary-bg);
+  border-bottom: 1px solid var(--border-dark);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
 }
 
 /* Card hover animation border transition */
 .card-border-glow {
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .card-border-glow:hover {
-  border-color: var(--accent-purple);
-  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.08);
+  border-color: var(--border-dark);
+  background-color: var(--secondary-bg);
 }
