@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface NavLink {
@@ -14,6 +14,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    document.documentElement.className = savedTheme;
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.className = nextTheme;
+  };
 
   const navLinks: NavLink[] = [
     { label: "Home", href: "#hero", id: "hero" },
@@ -119,26 +133,38 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden xl:block">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, "contact")}
-              className="group flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-bold text-primary-bg transition-all duration-300 hover:bg-white/95 hover:shadow-lg hover:shadow-white/5 active:scale-95"
+          {/* Theme switcher & Action Buttons */}
+          <div className="flex items-center gap-2">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="rounded-full p-2 text-text-muted hover:text-text-white transition-colors cursor-pointer"
+              aria-label="Toggle Theme"
             >
-              <span>Hire Me</span>
-              <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </div>
+              {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-card-bg hover:text-white xl:hidden"
-            aria-label="Toggle Navigation Menu"
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+            {/* Desktop CTA */}
+            <div className="hidden xl:block">
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, "contact")}
+                className="group flex items-center gap-1.5 rounded-full bg-white border border-border-dark px-4 py-2 text-xs font-bold text-primary-bg transition-all duration-300 hover:bg-white/95 hover:shadow-lg hover:shadow-white/5 active:scale-95"
+              >
+                <span>Hire Me</span>
+                <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-card-bg hover:text-text-white xl:hidden"
+              aria-label="Toggle Navigation Menu"
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
       </header>
 

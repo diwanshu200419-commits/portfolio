@@ -1,15 +1,40 @@
 @import "tailwindcss";
 
+:root {
+  --primary-bg: #09090b;
+  --secondary-bg: #18181b;
+  --card-bg: #111113;
+  --border-dark: #27272a;
+  --accent-purple: #6366f1;
+  --accent-blue: #3b82f6;
+  --highlight-cyan: #f4f4f5;
+  --text-white: #fafafa;
+  --text-muted: #a1a1aa;
+}
+
+.light {
+  --primary-bg: #ffffff;
+  --secondary-bg: #f4f4f5;
+  --card-bg: #f9f9fb;
+  --border-dark: #e4e4e7;
+  --accent-purple: #4f46e5;
+  --accent-blue: #2563eb;
+  --highlight-cyan: #18181b;
+  --text-white: #09090b;
+  --text-muted: #71717a;
+}
+
 @theme {
-  --color-primary-bg: #09090b;
-  --color-secondary-bg: #18181b;
-  --color-card-bg: #111113;
-  --color-border-dark: #27272a;
-  --color-accent-purple: #6366f1;
-  --color-accent-blue: #3b82f6;
-  --color-highlight-cyan: #f4f4f5;
-  --color-text-white: #fafafa;
-  --color-text-muted: #a1a1aa;
+  --color-primary-bg: var(--primary-bg);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-card-bg: var(--card-bg);
+  --color-border-dark: var(--border-dark);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-blue: var(--accent-blue);
+  --color-highlight-cyan: var(--highlight-cyan);
+  --color-white: var(--text-white);
+  --color-text-white: var(--text-white);
+  --color-text-muted: var(--text-muted);
 
   --font-sans: var(--font-inter), "Satoshi", sans-serif;
   --font-display: var(--font-space-grotesk), sans-serif;
