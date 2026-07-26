@@ -75,7 +75,7 @@ export default function ResumeSnapshot() {
                 </h4>
               </div>
               <p className="text-xs leading-relaxed text-text-white font-sans">
-                I am Diwanshu, a Software Engineer dedicated to building high-performance full-stack applications and AI-ready digital systems. I approach development with a product-focused engineering mindset, ensuring visual hierarchy, clean React components, and secure data schemas. My passion lies in solving business challenges and translating concepts into lightning-fast, production-ready deployments.
+                I am a Software Engineer specializing in full-stack systems architecture, performance optimization, and design engineering. I approach product development with a systems mindset—balancing pixel-perfect design aesthetics with low-latency server APIs, database schema refinement, and secure client-server authentication. My focus centers on building clean, maintainable code structures and shipping reliable, lightning-fast web deployments.
               </p>
             </div>
             <div className="mt-4 border-t border-border-dark/40 pt-4 flex items-center justify-between text-[9px] font-mono text-text-muted">

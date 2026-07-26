@@ -30,49 +30,49 @@ export default function AvailabilityStats() {
   const stats = [
     {
       icon: Rocket,
-      title: "Live Projects",
-      value: "6+",
-      description: "Designed, developed and deployed real-world web applications for businesses and personal products.",
+      title: "Production Shipments",
+      value: "6+ Deployed",
+      description: "Engineered and deployed production-ready applications featuring payment pipelines, AI context layers, and active clients.",
       color: "text-[#22D3EE] bg-[#22D3EE]/10",
       action: () => handleScrollTo("projects")
     },
     {
       icon: Monitor,
-      title: "Specialization",
-      value: "AI + Full Stack Development",
-      description: "Building modern web applications with AI integrations, scalable architecture and responsive UI.",
+      title: "Core Expertise",
+      value: "Full-Stack & AI Systems",
+      description: "Architecting React single-page systems alongside serverless backends, relational/document storage, and OpenAI/Gemini endpoints.",
       color: "text-[#8B5CF6] bg-[#8B5CF6]/10",
       action: () => handleScrollTo("skills")
     },
     {
       icon: Globe,
-      title: "Development Focus",
-      value: "Responsive + SEO Optimized",
-      description: "Fast, accessible, mobile-first applications optimized for performance and search engines.",
+      title: "Web Performance",
+      value: "100/100 Core Web Vitals",
+      description: "Delivering sub-100ms Time to First Byte (TTFB), Zero Cumulative Layout Shift (CLS), and semantic SEO optimization.",
       color: "text-[#2563EB] bg-[#2563EB]/10",
       action: () => handleScrollTo("projects") // Pointing to projects showcase
     },
     {
       icon: Users,
-      title: "Career Goal",
-      value: "Software Engineer",
-      description: "Seeking opportunities where I can learn, contribute, and grow while building products used by real people.",
+      title: "Target Role",
+      value: "Software Engineer (SDE)",
+      description: "Seeking engineering roles where I can own product features, optimize system performance, and design high-fidelity interfaces.",
       color: "text-emerald-400 bg-emerald-400/10",
       action: () => handleScrollTo("contact")
     },
     {
       icon: Zap,
-      title: "Deployment",
-      value: "Vercel + Netlify",
-      description: "Experience deploying production-ready websites with CI/CD workflows and modern hosting platforms.",
+      title: "CI/CD Infrastructure",
+      value: "Vercel • Netlify • Git",
+      description: "Configuring automated test-on-push pipelines, split-branch preview environments, and instant static page generation (SSG).",
       color: "text-amber-400 bg-amber-400/10",
       action: null
     },
     {
       icon: Brain,
-      title: "Continuous Learning",
-      value: "AI • Backend • System Design",
-      description: "Continuously improving my engineering skills through real-world projects and modern technologies.",
+      title: "Deepening Skills",
+      value: "LLM Orchestration & RAG",
+      description: "Implementing semantic vector search databases, context window pruning, memory state retrieval, and system caching.",
       color: "text-rose-400 bg-rose-400/10",
       action: () => handleScrollTo("timeline")
     }
@@ -85,14 +85,14 @@ export default function AvailabilityStats() {
   ];
 
   const highlights = [
-    "AI Powered Development",
-    "Real Business Projects",
-    "Responsive Design",
-    "SEO Optimized",
-    "Performance Focused",
-    "Clean UI/UX",
-    "Problem Solver",
-    "Fast Learner"
+    "Full-Stack Architecture",
+    "AI Orchestration & RAG",
+    "Core Web Vitals Optimization",
+    "Stripe Ledger Integration",
+    "High-Fidelity Interface Design",
+    "Distributed Document Storage",
+    "Serverless API Routing",
+    "Strict Accessibility (WCAG)"
   ];
 
   const containerVariants = {

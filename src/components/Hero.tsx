@@ -111,11 +111,11 @@ export default function Hero() {
                 Hi, I&apos;m Diwanshu.
               </span>
               <h1 className="font-display text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.05] mb-6">
-                Building{" "}
+                Engineering{" "}
                 <span className="bg-gradient-to-r from-accent-purple via-accent-blue to-highlight-cyan bg-clip-text text-transparent">
-                  AI Powered Products
+                  High-Performance Systems
                 </span>{" "}
-                that solve real problems.
+                and design-led interfaces.
               </h1>
             </motion.div>
 
@@ -124,7 +124,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-sm text-text-muted md:text-base max-w-xl leading-relaxed mb-8"
             >
-              I am a Software Engineer and Full Stack Developer. I build modern web applications and AI-powered digital products that combine Vercel-level speed with custom design details inspired by Stripe and Apple.
+              I am a Software Engineer specializing in full-stack systems architecture, performance optimization, and design engineering. I build clean, accessible digital interfaces and AI-ready backends with strict adherence to latency budgets, system resilience, and clean, maintainable code.
             </motion.p>
 
             {/* Interactive Command Shortcut Reminder */}
