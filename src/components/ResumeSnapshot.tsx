@@ -61,10 +61,9 @@ export default function ResumeSnapshot() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          {/* CARD 1: Professional Summary (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -85,10 +84,9 @@ export default function ResumeSnapshot() {
             </div>
           </motion.div>
 
-          {/* CARD 8: Resume Actions (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="lg:col-span-2 relative rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-accent-purple/20 bg-accent-purple/5 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -129,10 +127,9 @@ export default function ResumeSnapshot() {
             </div>
           </motion.div>
 
-          {/* CARD 2: Technical Skills (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow"
           >
             <div className="flex items-center gap-2 mb-5">
               <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
@@ -220,10 +217,9 @@ export default function ResumeSnapshot() {
             </div>
           </motion.div>
 
-          {/* CARD 4: Featured Projects (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-[#0a0f1d]/50 p-6 shadow-xl backdrop-blur-sm card-border-glow flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">

@@ -17,14 +17,12 @@ export default function Navbar() {
 
   const navLinks: NavLink[] = [
     { label: "Home", href: "#hero", id: "hero" },
-    { label: "Availability", href: "#availability", id: "availability" },
+    { label: "Status", href: "#availability", id: "availability" },
     { label: "Snapshot", href: "#snapshot", id: "snapshot" },
-    { label: "About", href: "#about", id: "about" },
     { label: "Projects", href: "#projects", id: "projects" },
     { label: "Skills", href: "#skills", id: "skills" },
     { label: "Timeline", href: "#timeline", id: "timeline" },
     { label: "Resume", href: "#resume", id: "resume" },
-    { label: "Terminal", href: "#terminal", id: "terminal" },
     { label: "Contact", href: "#contact", id: "contact" },
   ];
 
@@ -99,13 +97,13 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`relative text-xs font-medium tracking-wide uppercase transition-colors duration-200 hover:text-text-white ${
+                className={`relative text-xs font-semibold tracking-wider uppercase transition-colors duration-200 hover:text-text-white ${
                   activeSection === link.id ? "text-text-white" : "text-text-muted"
                 }`}
               >
@@ -122,7 +120,7 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "contact")}
@@ -136,7 +134,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-card-bg hover:text-white md:hidden"
+            className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-card-bg hover:text-white xl:hidden"
             aria-label="Toggle Navigation Menu"
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -152,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[72px] z-30 border-b border-border-dark bg-primary-bg/95 p-6 shadow-2xl backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 top-[72px] z-30 border-b border-border-dark bg-primary-bg/95 p-6 shadow-2xl backdrop-blur-xl xl:hidden"
           >
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
