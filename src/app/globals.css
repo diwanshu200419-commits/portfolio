@@ -44,6 +44,10 @@
   color-scheme: dark;
 }
 
+.light {
+  color-scheme: light;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -72,8 +76,8 @@ html.lenis body {
 }
 
 body {
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: var(--primary-bg);
+  color: var(--text-white);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
 }
@@ -84,18 +88,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: var(--primary-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border: 2px solid #09090b;
+  background: var(--border-dark);
+  border: 2px solid var(--primary-bg);
   border-radius: 8px;
   transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366f1;
+  background: var(--accent-purple);
 }
 
 /* Text Selection */
