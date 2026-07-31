@@ -109,7 +109,7 @@ export default function Projects() {
                     <img
                       src={screenshotMap[project.id]}
                       alt={`${project.title} Preview`}
-                      className="h-full w-full object-cover grayscale opacity-90 transition-all duration-500 ease-out group-hover:scale-103 group-hover:grayscale-0 group-hover:opacity-100"
+                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-103"
                       loading="lazy"
                     />
                   </div>
