@@ -1,7 +1,7 @@
 "use client";
 
 import { resumeData } from "@/data/resume";
-import { Download, Mail, Phone, MapPin, Briefcase, GraduationCap, Code2, BookOpen } from "lucide-react";
+import { Download, Mail, Phone, MapPin, Briefcase, GraduationCap, Code2, BookOpen, Award, User } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 
 export default function ResumeSection() {
@@ -42,7 +42,7 @@ export default function ResumeSection() {
           <div className="border-b border-border-dark/80 pb-6 print:border-black/20">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
               <div>
-                <h4 className="font-display text-2xl font-black text-white print:text-black">
+                <h4 className="font-display text-2xl font-black text-white print:text-black uppercase">
                   {resumeData.personalInfo.name}
                 </h4>
                 <p className="text-sm font-semibold text-accent-purple mt-1 print:text-[#5c3aba]">
@@ -82,28 +82,28 @@ export default function ResumeSection() {
             
             {/* Summary */}
             <div className="space-y-2">
-              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2">
-                <Briefcase className="h-4 w-4" />
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <User className="h-4 w-4 text-accent-purple print:text-black" />
                 <span>Professional Summary</span>
               </h5>
-              <p className="text-xs leading-relaxed text-text-muted print:text-black/90">
+              <p className="text-xs leading-relaxed text-text-muted print:text-black/90 font-sans">
                 {resumeData.summary}
               </p>
             </div>
 
             {/* Technical Skills */}
             <div className="space-y-3">
-              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2">
-                <Code2 className="h-4 w-4" />
-                <span>Technical Core Competencies</span>
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <Code2 className="h-4 w-4 text-accent-purple print:text-black" />
+                <span>Technical Skills</span>
               </h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
                 {resumeData.skills.map((skillGroup) => (
-                  <div key={skillGroup.category} className="space-y-1.5">
+                  <div key={skillGroup.category} className="space-y-1">
                     <strong className="text-white print:text-black font-semibold text-[11px]">
                       {skillGroup.category}:
                     </strong>
-                    <p className="text-text-muted print:text-black/80 font-mono leading-relaxed">
+                    <p className="text-text-muted print:text-black/80 font-mono text-[11px]">
                       {skillGroup.items.join(", ")}
                     </p>
                   </div>
@@ -111,21 +111,45 @@ export default function ResumeSection() {
               </div>
             </div>
 
-            {/* Selected Projects */}
+            {/* Experience */}
             <div className="space-y-4">
-              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2">
-                <Briefcase className="h-4 w-4" />
-                <span>Project Experience</span>
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <Briefcase className="h-4 w-4 text-accent-purple print:text-black" />
+                <span>Experience</span>
               </h5>
               <div className="space-y-4">
+                {resumeData.experience.map((exp) => (
+                  <div key={exp.role + exp.company} className="border-l border-border-dark/60 pl-4 py-0.5 print:border-black/20">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <strong className="text-sm font-bold text-white print:text-black">{exp.role}</strong>
+                      <span className="text-[10px] font-mono text-text-muted print:text-black/60">{exp.period}</span>
+                    </div>
+                    <p className="text-[10px] text-accent-purple font-semibold mt-0.5 print:text-[#5c3aba]">{exp.company}</p>
+                    <p className="text-xs text-text-muted mt-2 leading-relaxed print:text-black/80 font-sans">{exp.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Projects */}
+            <div className="space-y-4">
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <Briefcase className="h-4 w-4 text-accent-purple print:text-black" />
+                <span>Projects</span>
+              </h5>
+              <div className="space-y-6">
                 {resumeData.projects.map((proj) => (
-                  <div key={proj.name} className="border-l border-border-dark/65 pl-4 py-0.5 print:border-black/20">
+                  <div key={proj.name} className="border-l border-border-dark/60 pl-4 py-0.5 print:border-black/20">
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <strong className="text-sm font-bold text-white print:text-black">{proj.name}</strong>
                       <span className="text-[10px] font-mono text-text-muted print:text-black/60">{proj.period}</span>
                     </div>
-                    <p className="text-[10px] text-accent-purple font-semibold mt-0.5 print:text-[#5c3aba]">{proj.role}</p>
-                    <p className="text-xs text-text-muted mt-2 leading-relaxed print:text-black/80">{proj.description}</p>
+                    <p className="text-[10px] text-accent-purple font-semibold mt-0.5 print:text-[#5c3aba]">{proj.tagline}</p>
+                    <ul className="list-disc pl-5 mt-2 space-y-1 text-xs text-text-muted print:text-black/80 font-sans">
+                      {proj.description.map((bullet, idx) => (
+                        <li key={idx}>{bullet}</li>
+                      ))}
+                    </ul>
                     <div className="flex flex-wrap gap-1.5 mt-3">
                       {proj.tech.map((tech) => (
                         <span key={tech} className="rounded bg-border-dark/40 border border-border-dark/30 px-2 py-0.5 text-[9px] font-mono text-text-muted print:bg-gray-100 print:text-black print:border-none">
@@ -138,39 +162,49 @@ export default function ResumeSection() {
               </div>
             </div>
 
+            {/* Core Strengths */}
+            <div className="space-y-2">
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <Award className="h-4 w-4 text-accent-purple print:text-black" />
+                <span>Core Strengths</span>
+              </h5>
+              <p className="text-xs text-text-muted print:text-black/80 font-sans leading-relaxed">
+                {resumeData.strengths.join(" • ")}
+              </p>
+            </div>
+
+            {/* Certifications */}
+            <div className="space-y-2">
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <BookOpen className="h-4 w-4 text-accent-purple print:text-black" />
+                <span>Certifications</span>
+              </h5>
+              <ul className="list-disc pl-5 text-xs text-text-muted print:text-black/80 space-y-1 font-sans">
+                {resumeData.certifications.map((cert, idx) => (
+                  <li key={idx}>{cert}</li>
+                ))}
+              </ul>
+            </div>
+
             {/* Education */}
             <div className="space-y-3">
-              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2">
-                <GraduationCap className="h-4 w-4" />
+              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2 border-b border-border-dark/40 pb-1.5 print:border-black/10">
+                <GraduationCap className="h-4 w-4 text-accent-purple print:text-black" />
                 <span>Education</span>
               </h5>
               {resumeData.education.map((edu) => (
-                <div key={edu.degree} className="border-l border-border-dark/65 pl-4 py-0.5 print:border-black/20">
+                <div key={edu.degree} className="border-l border-border-dark/60 pl-4 py-0.5 print:border-black/20">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <strong className="text-sm font-bold text-white print:text-black">{edu.degree}</strong>
                     <span className="text-[10px] font-mono text-text-muted print:text-black/60">{edu.period}</span>
                   </div>
                   <p className="text-[10px] text-accent-purple font-semibold mt-0.5 print:text-[#5c3aba]">{edu.institution}</p>
-                  <p className="text-xs text-text-muted mt-2 print:text-black/80">{edu.details}</p>
+                  <p className="text-xs text-text-muted mt-2 print:text-black/80 font-sans">{edu.details}</p>
                 </div>
               ))}
             </div>
 
-            {/* Currently Learning */}
-            <div className="space-y-2">
-              <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue print:text-[#2563EB] flex items-center gap-2">
-                <BookOpen className="h-4 w-4" />
-                <span>Active Learning Interests</span>
-              </h5>
-              <ul className="list-disc pl-5 text-xs text-text-muted print:text-black/80 space-y-1">
-                {resumeData.learning.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
-            </div>
-
           </div>
-
         </div>
 
       </div>

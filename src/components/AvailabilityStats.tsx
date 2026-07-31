@@ -346,7 +346,7 @@ export default function AvailabilityStats() {
                   <div className="border-b border-border-dark/80 pb-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
                       <div>
-                        <h4 className="font-display text-2xl font-black text-white">{resumeData.personalInfo.name}</h4>
+                        <h4 className="font-display text-2xl font-black text-white uppercase">{resumeData.personalInfo.name}</h4>
                         <p className="text-xs font-semibold text-accent-purple mt-1">{resumeData.personalInfo.title}</p>
                         <p className="text-[10px] text-text-muted mt-2 font-mono">{resumeData.personalInfo.location}</p>
                       </div>
@@ -363,21 +363,6 @@ export default function AvailabilityStats() {
                   <div className="py-6 border-b border-border-dark/80">
                     <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Professional Summary</h5>
                     <p className="text-xs leading-relaxed text-text-muted font-sans">{resumeData.summary}</p>
-                  </div>
-
-                  {/* Education */}
-                  <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Education</h5>
-                    {resumeData.education.map((edu, idx) => (
-                      <div key={idx} className="space-y-1">
-                        <div className="flex justify-between items-baseline text-xs font-bold">
-                          <span className="text-white">{edu.degree}</span>
-                          <span className="font-mono text-[10px] text-text-muted font-normal">{edu.period}</span>
-                        </div>
-                        <p className="text-[10px] text-accent-purple font-semibold">{edu.institution}</p>
-                        <p className="text-[10px] text-text-muted mt-1 font-sans">{edu.details}</p>
-                      </div>
-                    ))}
                   </div>
 
                   {/* Skills Grid */}
@@ -397,18 +382,39 @@ export default function AvailabilityStats() {
                     </div>
                   </div>
 
+                  {/* Experience */}
+                  <div className="py-6 border-b border-border-dark/80">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Experience</h5>
+                    <div className="space-y-4">
+                      {resumeData.experience.map((exp, idx) => (
+                        <div key={idx} className="border-l border-border-dark/60 pl-4 py-0.5">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <strong className="text-sm font-bold text-white">{exp.role}</strong>
+                            <span className="text-[10px] font-mono text-text-muted">{exp.period}</span>
+                          </div>
+                          <p className="text-[10px] text-accent-purple font-semibold mt-0.5">{exp.company}</p>
+                          <p className="text-xs text-text-muted mt-2 leading-relaxed font-sans">{exp.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Projects */}
-                  <div className="py-6">
+                  <div className="py-6 border-b border-border-dark/80">
                     <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Featured Projects</h5>
                     <div className="space-y-6">
                       {resumeData.projects.map((p, idx) => (
-                        <div key={idx} className="space-y-1.5">
+                        <div key={idx} className="border-l border-border-dark/60 pl-4 py-0.5">
                           <div className="flex justify-between items-baseline text-xs font-bold">
                             <span className="text-white">{p.name}</span>
                             <span className="font-mono text-[10px] text-text-muted font-normal">{p.period}</span>
                           </div>
-                          <p className="text-[10px] text-accent-purple font-semibold">{p.role}</p>
-                          <p className="text-[10px] text-text-muted leading-relaxed font-sans">{p.description}</p>
+                          <p className="text-[10px] text-accent-purple font-semibold mt-0.5">{p.tagline}</p>
+                          <ul className="list-disc pl-5 mt-2 space-y-1 text-xs text-text-muted font-sans">
+                            {p.description.map((bullet, bIdx) => (
+                              <li key={bIdx}>{bullet}</li>
+                            ))}
+                          </ul>
                           <div className="flex flex-wrap gap-1.5 mt-2">
                             {p.tech.map((t) => (
                               <span key={t} className="rounded bg-border-dark/20 px-2 py-0.5 text-[9px] font-mono text-text-muted">{t}</span>
@@ -417,6 +423,31 @@ export default function AvailabilityStats() {
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Certifications */}
+                  <div className="py-6 border-b border-border-dark/80">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Certifications</h5>
+                    <ul className="list-disc pl-5 text-xs text-text-muted space-y-1 font-sans">
+                      {resumeData.certifications.map((cert, idx) => (
+                        <li key={idx}>{cert}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Education */}
+                  <div className="py-6">
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Education</h5>
+                    {resumeData.education.map((edu, idx) => (
+                      <div key={idx} className="space-y-1">
+                        <div className="flex justify-between items-baseline text-xs font-bold">
+                          <span className="text-white">{edu.degree}</span>
+                          <span className="font-mono text-[10px] text-text-muted font-normal">{edu.period}</span>
+                        </div>
+                        <p className="text-[10px] text-accent-purple font-semibold">{edu.institution}</p>
+                        <p className="text-[10px] text-text-muted mt-1 font-sans">{edu.details}</p>
+                      </div>
+                    ))}
                   </div>
 
                 </div>

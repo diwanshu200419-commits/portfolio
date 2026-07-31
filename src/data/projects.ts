@@ -37,22 +37,22 @@ export const projects: Project[] = [
   },
   {
     id: "resume-builder",
-    title: "Resume Builder",
-    tagline: "ATS-Optimized Real-time Resume Generator & Critic",
+    title: "Vaylo AI",
+    tagline: "AI Career Operating System & ATS Resume Generator",
     liveUrl: "https://resume-builder-murex-mu.vercel.app/",
     githubUrl: "https://github.com/diwanshu200419-commits/resume-builder",
     problem: "Job seekers struggle to write resumes that align with Applicant Tracking Systems (ATS) and fail to receive instant feedback on resume quality.",
-    solution: "Designed a real-time web application where candidates can input their skills and experience, receive instant grading against target job descriptions via AI, and export PDF resumes matching industry-standard layouts.",
-    impact: "Helped peers generate ATS-compatible resumes, increasing callback rates by a simulated 30% through targeted structural improvements.",
+    solution: "Architected and deployed Vaylo AI, a multi-module SaaS career platform featuring an AI-powered ATS scanner using Google Gemini AI, a live-preview resume builder, STAR interview prep module, and tiered subscriptions.",
+    impact: "Deployed a production SaaS career platform on Next.js 14 App Router and a Supabase/PostgreSQL backend, integrating tiered subscription tiers and Google OAuth.",
     features: [
-      "Split-pane real-time markdown resume editor with side-by-side preview",
-      "ATS parser and compatibility scanner matching keyword density",
-      "One-click professional PDF rendering and template switching",
-      "Dynamic styling adjustments (margins, font size, colors) for perfect spacing"
+      "AI-powered ATS scanner using Google Gemini AI for keyword-level scoring",
+      "Live-preview resume builder, AI job matcher, and salary negotiation assistant",
+      "STAR interview prep module and custom portfolio generator",
+      "Google OAuth authentication and tiered subscription system (Free/Pro/Premium)"
     ],
     challenges: "Ensuring consistent PDF formatting between client-side renders and actual paper print sizes without page layout breaks.",
     whatILearned: "Mastered CSS print styling rules, client-side PDF document generation packages, and state synchronization across multiple sibling components.",
-    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "html2pdf.js", "AI Scanner"],
+    techStack: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Google Gemini AI", "Vercel"],
     category: "Full-Stack"
   },
   {

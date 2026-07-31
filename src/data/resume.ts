@@ -11,100 +11,142 @@ export interface ResumeData {
     portfolioUrl: string;
   };
   summary: string;
-  objective: string;
   skills: {
     category: string;
     items: string[];
   }[];
+  experience: {
+    role: string;
+    company: string;
+    period: string;
+    description: string;
+  }[];
+  projects: {
+    name: string;
+    tagline: string;
+    period: string;
+    description: string[];
+    tech: string[];
+    liveUrl?: string;
+  }[];
+  strengths: string[];
+  certifications: string[];
   education: {
     degree: string;
     institution: string;
     period: string;
     details: string;
   }[];
-  projects: {
-    name: string;
-    role: string;
-    period: string;
-    description: string;
-    tech: string[];
-  }[];
-  learning: string[];
 }
 
 export const resumeData: ResumeData = {
   personalInfo: {
-    name: "Diwanshu",
-    title: "Software Engineer / Full Stack Developer",
-    subTitles: ["Software Engineer", "Full Stack Developer", "AI Software Engineer"],
+    name: "DIWANSHU",
+    title: "Software Engineer | Full-Stack Developer",
+    subTitles: ["Software Engineer", "Full-Stack Developer"],
     email: "diwanshu200419@gmail.com",
     phone: "+91 9816357615",
-    location: "Himachal Pradesh, India",
+    location: "Solan, Himachal Pradesh, India",
     github: "github.com/diwanshu200419-commits",
     linkedin: "linkedin.com/in/diwanshu-1a010b2b8",
     portfolioUrl: "portfolio-diwanshu200419-3167s-projects.vercel.app"
   },
-  summary: "Product-minded Software Engineer specializing in building full-stack web applications and AI-integrated products. Proficient in Next.js, TypeScript, Node.js, and MongoDB, with a strong focus on clean code design, performant architectures, database schemas, and Apple-level user interfaces.",
-  objective: "To secure a Software Engineering opportunity at a product-centric organization where I can leverage my full-stack skills, AI integration expertise, and UI/UX sensibilities to build high-performance, business-critical applications.",
+  summary: "Full-stack developer with hands-on experience building and deploying production web applications using React, Next.js, Node.js and MongoDB. Architected Vaylo AI, a multi-module SaaS career platform with Gemini AI integration, alongside six other live projects delivered through an internship and freelance client work. Comfortable owning a feature end-to-end, from API design through deployment on Vercel and Netlify.",
   skills: [
     {
-      category: "Frontend Engineering",
-      items: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4", "Framer Motion", "GSAP", "Lenis", "HTML5", "CSS3", "JavaScript (ES6+)"]
+      category: "Languages",
+      items: ["JavaScript", "HTML5", "CSS3"]
     },
     {
-      category: "Backend & Systems",
-      items: ["Node.js", "Express", "REST APIs", "API Orchestration", "Serverless Functions"]
+      category: "Frontend",
+      items: ["React.js", "Next.js", "Tailwind CSS"]
     },
     {
-      category: "Databases & Services",
-      items: ["MongoDB (Mongoose)", "Supabase", "PostgreSQL", "Vercel deployments", "Git", "GitHub version control"]
+      category: "Backend",
+      items: ["Node.js", "Express.js", "REST APIs"]
     },
     {
-      category: "AI Technologies",
-      items: ["Google Gemini API integration", "AI Prompt Engineering", "JSON-mode structured LLM outputs"]
+      category: "Databases",
+      items: ["MongoDB", "Supabase", "SQL"]
+    },
+    {
+      category: "Tools & Deployment",
+      items: ["Git", "GitHub", "VS Code", "Postman", "Vercel", "Netlify"]
+    },
+    {
+      category: "AI Tools",
+      items: ["OpenAI API", "Gemini API", "Claude"]
     }
   ],
-  education: [
+  experience: [
     {
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Himachal Pradesh University",
-      period: "Completed BCA",
-      details: "Focused on computer networks, object-oriented programming, database management systems, and algorithmic principles."
+      role: "Full Stack Development Intern",
+      company: "ZSapiens SoftTech Pvt. Ltd.",
+      period: "January 2026",
+      description: "Built responsive web interfaces and completed project-based coding assignments during a one-month, full-stack focused internship, debugging code and using Git for version control."
+    },
+    {
+      role: "Freelance Full-Stack Developer",
+      company: "Freelance",
+      period: "April 2026 – Present",
+      description: "Designed and shipped websites for local businesses independently, integrating custom UI, WhatsApp enquiry flows and AI-assisted features from scoping through deployment."
     }
   ],
   projects: [
     {
-      name: "SmartDollar Labs",
-      role: "Lead Full-Stack Developer",
-      period: "2025 - Present",
-      description: "Designed and engineered an AI-powered financial advisory dashboard. Integrated Gemini API for custom wealth advice, optimized MongoDB query patterns for transaction history caching, and designed smooth analytics visualization using Recharts.",
-      tech: ["Next.js", "React", "TypeScript", "MongoDB", "Gemini API", "Recharts"]
+      name: "Vaylo AI — AI Career Operating System",
+      tagline: "ATS-Optimized Real-time Resume Generator & Critic",
+      period: "2026",
+      tech: ["Next.js 14 (App Router)", "TypeScript", "React", "Tailwind CSS", "Supabase/PostgreSQL", "Google Gemini AI", "Vercel"],
+      liveUrl: "https://resume-builder-murex-mu.vercel.app/",
+      description: [
+        "Architected and deployed a production SaaS career platform with a strict TypeScript codebase on Next.js 14 App Router and a Supabase/PostgreSQL backend.",
+        "Engineered an AI-powered ATS resume scanner using Google Gemini AI, parsing PDF/DOCX uploads to generate keyword-level scoring and before/after optimization feedback.",
+        "Built a live-preview resume builder, AI job matcher, salary negotiation assistant, STAR interview prep module and portfolio generator across a unified dashboard.",
+        "Implemented Google OAuth authentication and a tiered subscription system (Free/Pro/Premium) with usage-gated feature access."
+      ]
     },
     {
-      name: "Resume Builder & Critic",
-      role: "Lead Frontend Engineer",
+      name: "SmartDollar Labs",
+      tagline: "AI-powered business platform with Gemini API integration for recommendations and Supabase lead capture.",
       period: "2025",
-      description: "Built a split-pane interactive ATS resume builder. Implemented real-time markdown styling compilers, Supabase authorization rules, and client-side PDF document compilers with layout shift safeguards.",
-      tech: ["Next.js", "React", "TypeScript", "Supabase", "html2pdf.js"]
+      tech: ["Next.js", "React", "TypeScript", "MongoDB", "Gemini API", "Supabase"],
+      liveUrl: "https://smart-dollar.vercel.app/",
+      description: [
+        "Built an AI-powered financial advisory platform integrating Gemini API for recommendations and Supabase for lead capture."
+      ]
+    },
+    {
+      name: "E-Book Marketplace",
+      tagline: "Full-stack marketplace with authentication, CRUD operations and an admin content-moderation workflow.",
+      period: "2025",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Stripe API", "Tailwind CSS"],
+      liveUrl: "https://ebook-website-theta-nine.vercel.app/",
+      description: [
+        "Developed full-stack marketplace with author publishing, Stripe checkouts, and content moderation."
+      ]
     },
     {
       name: "Guru Kripa Travels",
-      role: "Frontend Developer",
+      tagline: "Responsive, mobile-first travel website with WhatsApp enquiry integration.",
       period: "2025",
-      description: "Designed a premium travel booking portal featuring high-definition image galleries, AVIF/WebP asset compression, and custom Framer Motion page reveals, achieving a 100/100 Lighthouse performance score.",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"]
-    },
-    {
-      name: "Vijeshwari Devi Kulja Motors",
-      role: "Lead Web Developer",
-      period: "2025",
-      description: "Developed a lightweight, mobile-first auto parts catalog and booking tool for a local dealership, driving a 40% increase in monthly online inquiries.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Netlify Forms", "WhatsApp API"]
+      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      liveUrl: "https://guru-henna-psi.vercel.app/",
+      description: [
+        "Designed and shipped a responsive, mobile-first travel website with WhatsApp enquiry integration."
+      ]
     }
   ],
-  learning: [
-    "Three.js & React Three Fiber (for premium 3D web interactions)",
-    "Database sharding and advanced indexing methodologies",
-    "Cognitive agent frameworks and langchain architectures"
+  strengths: ["Problem Solving", "Quick Learner", "Adaptability", "Team Collaboration", "Communication", "Continuous Learning"],
+  certifications: [
+    "Full Stack Development Internship — ZSapiens SoftTech Pvt. Ltd. (January 2026)"
+  ],
+  education: [
+    {
+      degree: "Bachelor of Computer Applications (BCA)",
+      institution: "Shoolini Institute of Life Sciences & Business Management, Himachal Pradesh University",
+      period: "2026",
+      details: "CGPA: 7.03"
+    }
   ]
 };
