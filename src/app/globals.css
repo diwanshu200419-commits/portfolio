@@ -115,16 +115,31 @@ body {
   pointer-events: none;
 }
 
-/* Custom Grid Background Pattern (Linear-inspired) */
+/* Custom Grid Background Pattern (Linear-inspired) with soft radial spotlight mask */
 .bg-grid-pattern {
-  background-size: 50px 50px;
+  background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(120, 120, 120, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(120, 120, 120, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(120, 120, 120, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 120, 120, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 75%);
 }
 
-.bg-radial-gradient-overlay {
-  background: transparent;
+.ambient-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dark .ambient-glow {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, transparent 70%);
 }
 
 /* Hide default cursor on devices that support hover if custom cursor is active */
