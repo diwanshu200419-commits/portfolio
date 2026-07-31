@@ -143,9 +143,15 @@ export const resumeData: ResumeData = {
   ],
   education: [
     {
+      degree: "Master of Computer Applications (MCA)",
+      institution: "LPU Online",
+      period: "Expected 2028",
+      details: "Specialization: Machine Learning & Artificial Intelligence"
+    },
+    {
       degree: "Bachelor of Computer Applications (BCA)",
       institution: "Shoolini Institute of Life Sciences & Business Management, Himachal Pradesh University",
-      period: "2026",
+      period: "Completed 2026",
       details: "CGPA: 7.03"
     }
   ]

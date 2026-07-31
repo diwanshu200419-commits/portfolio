@@ -180,18 +180,18 @@ export default function ResumeSnapshot() {
               </div>
               
               <div className="relative border-l border-border-dark pl-3 mt-4 space-y-4">
-                <div className="relative">
-                  <span className="absolute -left-[16px] top-1.5 h-1.5 w-1.5 rounded-full bg-accent-blue" />
-                  <strong className="text-xs font-bold text-white block">BCA Graduate</strong>
-                  <span className="text-[9px] font-mono text-text-muted block">Graduated: 2026</span>
-                  <span className="text-[10px] text-text-muted mt-1 block">
-                    Himachal Pradesh University (SILB)
-                  </span>
-                </div>
+                {resumeData.education.map((edu, idx) => (
+                  <div key={idx} className="relative text-xs">
+                    <span className="absolute -left-[16px] top-1.5 h-1.5 w-1.5 rounded-full bg-accent-purple" />
+                    <strong className="text-xs font-bold text-white block leading-tight">{edu.degree}</strong>
+                    <span className="text-[9px] font-mono text-text-muted block mt-0.5">{edu.period} • {edu.institution}</span>
+                    <span className="text-[9px] text-text-muted block mt-0.5">{edu.details}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="mt-4 border-t border-border-dark/40 pt-3 text-[9px] font-mono text-text-muted">
-              <span>Focus: Computer Science Basics</span>
+              <span>Goal: Academic & Tech Excellence</span>
             </div>
           </motion.div>
 

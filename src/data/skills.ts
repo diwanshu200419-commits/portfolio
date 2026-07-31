@@ -1,6 +1,7 @@
 export interface Skill {
   name: string;
   levelDescription: string;
+  confidence: "Primary Stack" | "Familiar" | "Learning";
   iconName: string; // Used to resolve Lucide icon names dynamically
 }
 
@@ -11,37 +12,56 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Frontend Engineering",
+    title: "Frontend",
     skills: [
-      { name: "React", levelDescription: "Component design, hooks, state synchronization, concurrent features", iconName: "Atom" },
-      { name: "Next.js", levelDescription: "Server Components, App Router, SSR, SSG, dynamic routing, middlewares", iconName: "Layers" },
-      { name: "TypeScript", levelDescription: "Type safety, generics, interfaces, strict configuration, custom typing", iconName: "FileCode" },
-      { name: "Tailwind CSS", levelDescription: "Tailwind v4, theme customization, responsive grids, dark/light theme systems", iconName: "Paintbrush" },
-      { name: "Framer Motion", levelDescription: "Staggered transitions, scroll-triggered animations, page transitions, layouts", iconName: "Sparkles" }
+      { name: "React.js", levelDescription: "Component lifecycle, Hooks, custom states, concurrent routing", confidence: "Primary Stack", iconName: "Atom" },
+      { name: "Next.js 14/15", levelDescription: "Server Components, dynamic file routes, middleware authorization", confidence: "Primary Stack", iconName: "Layers" },
+      { name: "TypeScript", levelDescription: "Type compilation, interface safety, strict generics structures", confidence: "Primary Stack", iconName: "FileCode" },
+      { name: "Tailwind CSS", levelDescription: "Fluid grid layouts, custom configurations, utility styling scaling", confidence: "Primary Stack", iconName: "Paintbrush" },
+      { name: "Framer Motion", levelDescription: "Subtle page transitions, scroll triggers, layout animations", confidence: "Familiar", iconName: "Sparkles" }
     ]
   },
   {
-    title: "Backend & Core APIs",
+    title: "Backend",
     skills: [
-      { name: "Node.js", levelDescription: "Asynchronous I/O, file systems, npm module ecosystem, server runtimes", iconName: "Terminal" },
-      { name: "Express", levelDescription: "API design, custom middleware, error handling, route optimization", iconName: "Cpu" },
-      { name: "REST APIs", levelDescription: "HTTP verbs, status codes, payload design, rate-limiting, error responses", iconName: "Link" }
+      { name: "Node.js", levelDescription: "Asynchronous runtime pipelines, file I/O operations, process tools", confidence: "Primary Stack", iconName: "Terminal" },
+      { name: "Express.js", levelDescription: "REST API route controller pipelines, middleware validation", confidence: "Primary Stack", iconName: "Cpu" },
+      { name: "REST APIs", levelDescription: "Standard status headers, payload serialization, route structures", confidence: "Primary Stack", iconName: "Link" }
     ]
   },
   {
-    title: "Databases & Cloud",
+    title: "Databases",
     skills: [
-      { name: "MongoDB", levelDescription: "Mongoose ODM, aggregation pipelines, indexing, schema design", iconName: "Database" },
-      { name: "Supabase", levelDescription: "Postgres database, auth integration, real-time channels, storage storage buckets", iconName: "Lock" },
-      { name: "Vercel", levelDescription: "Edge functions, production deployments, domains configuration, performance metrics", iconName: "Cloud" }
+      { name: "MongoDB", levelDescription: "Mongoose schema patterns, query indexing, collection aggregations", confidence: "Primary Stack", iconName: "Database" },
+      { name: "Supabase / PostgreSQL", levelDescription: "Relational queries, row-level policies, OAuth bindings", confidence: "Familiar", iconName: "Lock" }
     ]
   },
   {
-    title: "AI Integration & Tools",
+    title: "Cloud & DevOps",
     skills: [
-      { name: "Google Gemini API", levelDescription: "Prompt engineering, context-window management, structured JSON outputs", iconName: "Brain" },
-      { name: "Git", levelDescription: "Branch workflows, commit standards, merge resolving, rebase, cherry-pick", iconName: "GitBranch" },
-      { name: "GitHub", levelDescription: "Pull requests, code reviews, actions/workflows, issues management", iconName: "Github" }
+      { name: "Vercel", levelDescription: "Static page optimization, environment setups, git deployment links", confidence: "Primary Stack", iconName: "Cloud" },
+      { name: "Netlify", levelDescription: "Web deployment, custom routing rules, build pipeline linking", confidence: "Familiar", iconName: "Cloud" }
+    ]
+  },
+  {
+    title: "AI Integration",
+    skills: [
+      { name: "Google Gemini API", levelDescription: "Prompt structures, structured JSON parsing, text embedding contexts", confidence: "Familiar", iconName: "Brain" },
+      { name: "OpenAI API", levelDescription: "Completion calls, prompt parameters tuning, chat memory setups", confidence: "Familiar", iconName: "Brain" }
+    ]
+  },
+  {
+    title: "Tools",
+    skills: [
+      { name: "Git", levelDescription: "Version control workflows, branching rules, clean commits structure", confidence: "Primary Stack", iconName: "GitBranch" },
+      { name: "GitHub", levelDescription: "Pull requests reviews, action pipelines, issue tracking, organization", confidence: "Primary Stack", iconName: "Github" }
+    ]
+  },
+  {
+    title: "Currently Learning",
+    skills: [
+      { name: "SQL Query Tuning", levelDescription: "Learning relational index optimization, join costs, schema normalizations", confidence: "Learning", iconName: "Database" },
+      { name: "Docker Basics", levelDescription: "Learning basic container orchestration, port mapping, local builds setups", confidence: "Learning", iconName: "Cpu" }
     ]
   }
 ];

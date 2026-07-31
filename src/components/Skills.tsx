@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { skillCategories, Skill } from "@/data/skills";
 import { Atom, Layers, FileCode, Paintbrush, Sparkles, Terminal, Cpu, Link, Database, Lock, Cloud, Brain, GitBranch, Code2, HelpCircle } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
@@ -30,7 +30,7 @@ export default function Skills() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.05 },
     },
   };
 
@@ -44,22 +44,19 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="relative border-t border-border-dark/60 bg-black/20 py-24 md:py-32">
-      {/* Background radial highlight */}
-      <div className="absolute right-0 top-1/4 -z-10 h-96 w-96 rounded-full bg-accent-purple/5 blur-3xl" />
-
+    <section id="skills" className="relative border-t border-border-dark/60 bg-black/5 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         
         {/* Section Heading */}
         <div className="mb-16 md:max-w-2xl">
-          <h2 className="font-display text-xs font-semibold uppercase tracking-widest text-accent-purple mb-3">
+          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent-purple">
             Expertise
-          </h2>
-          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          </span>
+          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mt-3">
             Technical Stack &amp; Tooling
           </h3>
-          <p className="mt-4 text-sm text-text-muted">
-            Rather than grading myself with meaningless percentages, here is an explanation of what I specialize in and how I apply each technology in real-world scenarios.
+          <p className="mt-4 text-sm text-text-muted leading-relaxed font-sans">
+            Here is a breakdown of the technologies I use. Click on any card to see details on how I apply it in codebases.
           </p>
         </div>
 
@@ -73,16 +70,16 @@ export default function Skills() {
             viewport={{ once: true, margin: "-100px" }}
             className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8"
           >
-            {skillCategories.map((cat, idx) => (
+            {skillCategories.map((cat) => (
               <motion.div
                 key={cat.title}
                 variants={categoryVariants}
                 className="space-y-4"
               >
-                <h4 className="font-display text-xs font-semibold uppercase tracking-wider text-text-muted border-b border-border-dark/30 pb-2">
+                <h4 className="font-mono text-[10px] font-bold uppercase tracking-wider text-text-muted border-b border-border-dark/30 pb-2">
                   {cat.title}
                 </h4>
-                <div className="grid grid-cols-1 gap-3">
+                <div className="grid grid-cols-1 gap-2.5">
                   {cat.skills.map((skill) => {
                     const IconComponent = iconMap[skill.iconName] || HelpCircle;
                     const isCurrent = selectedSkill?.name === skill.name;
@@ -93,8 +90,8 @@ export default function Skills() {
                         onClick={() => setSelectedSkill(skill)}
                         className={`flex items-center gap-3.5 rounded-lg border p-3 text-left transition-all duration-200 cursor-pointer ${
                           isCurrent
-                            ? "border-accent-purple bg-accent-purple/10 shadow-lg shadow-accent-purple/5"
-                            : "border-border-dark bg-card-bg/20 hover:border-border-dark/80 hover:bg-card-bg/40"
+                            ? "border-accent-purple bg-accent-purple/10 shadow-sm"
+                            : "border-border-dark bg-card-bg/25 hover:border-border-dark/80 hover:bg-card-bg/50"
                         }`}
                       >
                         <div
@@ -105,9 +102,20 @@ export default function Skills() {
                           <IconComponent className="h-4.5 w-4.5" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <span className="block text-xs font-bold text-white truncate">
-                            {skill.name}
-                          </span>
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="block text-xs font-bold text-white truncate">
+                              {skill.name}
+                            </span>
+                            <span className={`text-[8.5px] font-mono px-1.5 py-0.5 rounded shrink-0 ${
+                              skill.confidence === "Primary Stack"
+                                ? "bg-accent-purple/10 border border-accent-purple/20 text-accent-purple"
+                                : skill.confidence === "Familiar"
+                                ? "bg-border-dark/30 border border-border-dark/60 text-text-muted"
+                                : "bg-[#070708] border border-border-dark/30 text-text-muted"
+                            }`}>
+                              {skill.confidence}
+                            </span>
+                          </div>
                         </div>
                       </button>
                     );
@@ -120,46 +128,49 @@ export default function Skills() {
           {/* Right Column: Dynamic Insight Panel */}
           <div className="lg:col-span-4 lg:sticky lg:top-24">
             <div className="rounded-xl border border-border-dark bg-card-bg/30 p-6 backdrop-blur-md">
-              <h4 className="flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wider text-text-white mb-4">
-                <Code2 className="h-4.5 w-4.5 text-accent-blue" />
-                <span>Production Implementation</span>
+              <h4 className="flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-wider text-text-white mb-4 border-b border-border-dark/30 pb-3">
+                <Code2 className="h-4 w-4 text-accent-purple" />
+                <span>Selected Skill Details</span>
               </h4>
 
-              {selectedSkill ? (
-                <motion.div
-                  key={selectedSkill.name}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="text-sm font-bold text-white">
-                      {selectedSkill.name}
-                    </span>
-                    <span className="rounded bg-accent-purple/10 border border-accent-purple/20 px-2 py-0.5 text-[9px] font-mono text-accent-purple">
-                      Verified Skill
-                    </span>
+              <AnimatePresence mode="wait">
+                {selectedSkill ? (
+                  <motion.div
+                    key={selectedSkill.name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-4 font-sans"
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-bold text-white">
+                        {selectedSkill.name}
+                      </span>
+                      <span className="rounded bg-accent-purple/10 border border-accent-purple/20 px-2 py-0.5 text-[9px] font-mono text-accent-purple">
+                        {selectedSkill.confidence}
+                      </span>
+                    </div>
+                    <p className="text-xs leading-relaxed text-text-muted">
+                      {selectedSkill.levelDescription}
+                    </p>
+                  </motion.div>
+                ) : (
+                  <div className="py-8 text-center text-xs text-text-muted font-sans">
+                    <HelpCircle className="mx-auto h-8 w-8 text-border-dark mb-3 animate-pulse" />
+                    <p>Click any skill card on the left to see details on application.</p>
                   </div>
-                  <p className="text-xs leading-relaxed text-text-muted">
-                    {selectedSkill.levelDescription}
-                  </p>
-                </motion.div>
-              ) : (
-                <div className="py-8 text-center text-xs text-text-muted">
-                  <HelpCircle className="mx-auto h-8 w-8 text-border-dark mb-3 animate-pulse" />
-                  <p>Click any skill card on the left to see how it is applied in my stack architectures.</p>
-                </div>
-              )}
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Quick Tech Fact Card */}
-            <div className="mt-6 rounded-xl border border-border-dark/60 bg-gradient-to-br from-accent-purple/5 to-accent-blue/5 p-6">
-              <h5 className="font-display text-xs font-bold text-white mb-2">
+            <div className="mt-6 rounded-xl border border-border-dark bg-[#0a0a0c]/60 p-6">
+              <h5 className="font-mono text-[10px] font-bold text-white uppercase tracking-wider mb-2">
                 TypeScript-First Workflows
               </h5>
-              <p className="text-[11px] leading-relaxed text-text-muted">
-                All React apps and Next.js APIs are written using strict TypeScript configurations to guarantee compiler-level contract compliance and eliminate runtime type failures.
+              <p className="text-[11px] leading-relaxed text-text-muted font-sans">
+                All React components, routes, and Next.js middlewares are developed with strict compiler configurations to catch bugs early and secure API parameter contracts.
               </p>
             </div>
           </div>

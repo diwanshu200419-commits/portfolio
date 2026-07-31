@@ -18,37 +18,37 @@ export default function Timeline() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
+    hidden: { opacity: 0, x: -10 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
     },
   };
 
   return (
-    <section id="timeline" className="relative border-t border-border-dark/60 py-24 md:py-32">
+    <section id="timeline" className="relative border-t border-border-dark/60 py-24 md:py-36 bg-black/5">
       <div className="mx-auto max-w-4xl px-6">
         
         {/* Section Heading */}
-        <div className="mb-16 text-center">
-          <h2 className="font-display text-xs font-semibold uppercase tracking-widest text-accent-blue mb-3">
-            Journey
-          </h2>
-          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Milestones &amp; Experience
+        <div className="mb-20">
+          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent-purple">
+            Milestones
+          </span>
+          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mt-3">
+            Chronological Journey
           </h3>
-          <p className="mt-4 text-sm text-text-muted mx-auto max-w-xl">
-            A chronological look at my evolution from parsing initial algorithms to deploying full-featured SaaS prototypes and local commercial deployments.
+          <p className="mt-4 text-sm text-text-muted max-w-xl leading-relaxed font-sans">
+            A vertical trace of my development checkpoints, from learning variable declaration structures to releasing full-stack SaaS.
           </p>
         </div>
 
-        {/* Timeline Layout */}
+        {/* Timeline Path */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -62,37 +62,37 @@ export default function Timeline() {
 
             return (
               <motion.div
-                key={item.year}
+                key={index}
                 variants={itemVariants}
                 className="relative group"
               >
                 {/* Connector Dot */}
                 <div
-                  className={`absolute -left-[45px] top-1 flex h-8 w-8 items-center justify-center rounded-full border bg-primary-bg transition-colors duration-300 ${
+                  className={`absolute -left-[48px] top-1 flex h-8 w-8 items-center justify-center rounded-full border bg-primary-bg transition-colors duration-300 ${
                     isLatest
-                      ? "border-accent-blue text-accent-blue shadow-lg shadow-accent-blue/15"
+                      ? "border-accent-purple text-accent-purple shadow-sm"
                       : "border-border-dark text-text-muted group-hover:border-white/60 group-hover:text-white"
                   }`}
                 >
                   <IconComponent className="h-4 w-4" />
                 </div>
 
-                {/* Timeline content card */}
-                <div className="rounded-xl border border-border-dark/40 bg-card-bg/10 p-6 backdrop-blur-sm transition-all duration-300 hover:border-border-dark/80 hover:bg-card-bg/25">
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                {/* Timeline Content Block (Notion style) */}
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-baseline gap-3">
                     <span className="font-mono text-xs font-bold text-accent-purple">
                       {item.year}
                     </span>
+                    <h4 className="font-display text-base font-bold text-white">
+                      {item.title}
+                    </h4>
                     {isLatest && (
-                      <span className="rounded bg-accent-blue/10 border border-accent-blue/20 px-2 py-0.5 text-[9px] font-mono text-accent-blue">
-                        Current focus
+                      <span className="rounded bg-accent-purple/10 border border-accent-purple/20 px-2 py-0.5 text-[9px] font-mono text-accent-purple">
+                        Expected Program
                       </span>
                     )}
                   </div>
-                  <h4 className="font-display text-base font-bold text-white mb-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs leading-relaxed text-text-muted">
+                  <p className="text-xs leading-relaxed text-text-muted max-w-2xl font-sans">
                     {item.description}
                   </p>
                 </div>

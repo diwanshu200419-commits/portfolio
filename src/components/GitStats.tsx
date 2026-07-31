@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, GitFork, BookOpen, ExternalLink, Calendar } from "lucide-react";
+import { Star, GitFork, BookOpen, ExternalLink, Calendar, GitPullRequest } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 import { useState } from "react";
 
 export default function GitStats() {
   const [hoveredDay, setHoveredDay] = useState<{ count: number; date: string } | null>(null);
 
-  // Generate contribution calendar squares (last 16 weeks * 7 days for clean visual layout)
-  const totalWeeks = 18;
+  // Generate contribution calendar squares (18 weeks * 7 days for clean visual layout)
+  const totalWeeks = 20;
   const daysOfWeek = 7;
   const contributionGrid: number[][] = [];
 
@@ -17,14 +17,13 @@ export default function GitStats() {
   for (let w = 0; w < totalWeeks; w++) {
     const week: number[] = [];
     for (let d = 0; d < daysOfWeek; d++) {
-      // Create pattern of contributions: higher counts on weekdays, lower on weekends, some blank days
       const isWeekend = d === 0 || d === 6;
       let count = 0;
-      const seed = Math.sin(w * 0.5 + d * 0.8) * 10;
+      const seed = Math.sin(w * 0.4 + d * 0.9) * 10;
       
-      if (seed > 3) {
-        count = isWeekend ? Math.floor(Math.random() * 3) : Math.floor(Math.random() * 8) + 2;
-      } else if (seed > -1) {
+      if (seed > 4) {
+        count = isWeekend ? Math.floor(Math.random() * 2) : Math.floor(Math.random() * 6) + 1;
+      } else if (seed > 0) {
         count = Math.floor(Math.random() * 2);
       }
       week.push(count);
@@ -32,7 +31,6 @@ export default function GitStats() {
     contributionGrid.push(week);
   }
 
-  // Get grid square color matching GitHub dark mode colors
   const getContributionColor = (count: number) => {
     if (count === 0) return "bg-[#161b22]";
     if (count <= 2) return "bg-[#0e4429]";
@@ -42,10 +40,10 @@ export default function GitStats() {
   };
 
   const topLanguages = [
-    { name: "TypeScript", percentage: 56, color: "bg-[#3178c6]" },
-    { name: "JavaScript", percentage: 24, color: "bg-[#f1e05a]" },
-    { name: "HTML / CSS", percentage: 12, color: "bg-[#e34c26]" },
-    { name: "Others (JSON, Shell)", percentage: 8, color: "bg-[#8b949e]" }
+    { name: "TypeScript", percentage: 56, color: "bg-[#3178c6]", hexColor: "#3178c6" },
+    { name: "JavaScript", percentage: 24, color: "bg-[#f1e05a]", hexColor: "#f1e05a" },
+    { name: "HTML / CSS", percentage: 12, color: "bg-[#e34c26]", hexColor: "#e34c26" },
+    { name: "Others", percentage: 8, color: "bg-[#8b949e]", hexColor: "#8b949e" }
   ];
 
   const pinnedRepos = [
@@ -70,40 +68,40 @@ export default function GitStats() {
   ];
 
   return (
-    <section id="github" className="relative border-t border-border-dark/60 py-24 md:py-32">
+    <section id="github" className="relative border-t border-border-dark/60 py-24 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
         
         {/* Section Heading */}
-        <div className="mb-16 md:max-w-2xl">
-          <h2 className="font-display text-xs font-semibold uppercase tracking-widest text-accent-blue mb-3">
+        <div className="mb-20">
+          <span className="font-mono text-xs font-semibold uppercase tracking-wider text-accent-purple">
             Open Source
-          </h2>
-          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            GitHub Activity &amp; Repositories
+          </span>
+          <h3 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mt-3">
+            GitHub Activity &amp; Pinned Repos
           </h3>
-          <p className="mt-4 text-sm text-text-muted">
-            Belief in keeping open-source code clean and structured. Here is a breakdown of my coding habits, language distributions, and featured public repositories.
+          <p className="mt-4 text-sm text-text-muted max-w-xl leading-relaxed font-sans">
+            I write clean, documented code and push consistently. Below is my language profile and commit calendar.
           </p>
         </div>
 
         {/* Outer GitHub Grid layout */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 items-start">
           
-          {/* Left Block - Grid Graph & Stats */}
+          {/* Left Block - Heatmap & Pinned Repos */}
           <div className="lg:col-span-8 space-y-6">
             
             {/* Contribution Matrix Container */}
-            <div className="rounded-xl border border-border-dark bg-card-bg/10 p-6 backdrop-blur-sm">
+            <div className="rounded-xl border border-border-dark bg-[#0a0a0c]/60 p-6 shadow-sm">
               <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="flex items-center gap-2 text-xs text-white">
+                <div className="flex items-center gap-2 text-xs text-white font-mono">
                   <Calendar className="h-4 w-4 text-accent-purple" />
-                  <span className="font-bold">Commit Frequency (248 contributions)</span>
+                  <span className="font-bold">240+ contributions in the last year</span>
                 </div>
                 <a
                   href="https://github.com/diwanshu200419-commits"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-[10px] font-bold text-accent-blue hover:underline"
+                  className="flex items-center gap-1.5 text-[10px] font-mono text-accent-purple hover:underline"
                 >
                   <span>diwanshu200419-commits</span>
                   <ExternalLink className="h-3 w-3" />
@@ -111,10 +109,10 @@ export default function GitStats() {
               </div>
 
               {/* Grid Layout scrollable container */}
-              <div className="overflow-x-auto pb-4 scrollbar-thin">
-                <div className="flex gap-1.5 min-w-[340px]">
+              <div className="overflow-x-auto pb-4 scrollbar-none">
+                <div className="flex gap-1 min-w-[420px] justify-between">
                   {contributionGrid.map((week, weekIdx) => (
-                    <div key={weekIdx} className="flex flex-col gap-1.5">
+                    <div key={weekIdx} className="flex flex-col gap-1">
                       {week.map((count, dayIdx) => {
                         const dateStr = `Day ${dayIdx + 1}, Week ${weekIdx + 1}`;
                         return (
@@ -122,7 +120,7 @@ export default function GitStats() {
                             key={dayIdx}
                             onMouseEnter={() => setHoveredDay({ count, date: dateStr })}
                             onMouseLeave={() => setHoveredDay(null)}
-                            className={`h-3 w-3 rounded-sm transition-all duration-200 hover:scale-125 hover:shadow-md ${getContributionColor(
+                            className={`h-2.5 w-2.5 rounded-[1px] transition-all duration-100 hover:scale-115 ${getContributionColor(
                               count
                             )}`}
                           />
@@ -134,10 +132,10 @@ export default function GitStats() {
               </div>
 
               {/* Grid Tooltip footer */}
-              <div className="flex items-center justify-between mt-4 text-[10px] text-text-muted">
+              <div className="flex items-center justify-between mt-4 text-[9px] font-mono text-text-muted border-t border-border-dark/30 pt-4">
                 <div>
                   {hoveredDay ? (
-                    <span className="text-white font-medium">
+                    <span className="text-white font-semibold">
                       {hoveredDay.count} commits on {hoveredDay.date}
                     </span>
                   ) : (
@@ -146,11 +144,11 @@ export default function GitStats() {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span>Less</span>
-                  <span className="h-2.5 w-2.5 rounded-sm bg-[#161b22]" />
-                  <span className="h-2.5 w-2.5 rounded-sm bg-[#0e4429]" />
-                  <span className="h-2.5 w-2.5 rounded-sm bg-[#006d32]" />
-                  <span className="h-2.5 w-2.5 rounded-sm bg-[#26a641]" />
-                  <span className="h-2.5 w-2.5 rounded-sm bg-[#39d353]" />
+                  <span className="h-2 w-2 rounded-[1px] bg-[#161b22]" />
+                  <span className="h-2 w-2 rounded-[1px] bg-[#0e4429]" />
+                  <span className="h-2 w-2 rounded-[1px] bg-[#006d32]" />
+                  <span className="h-2 w-2 rounded-[1px] bg-[#26a641]" />
+                  <span className="h-2 w-2 rounded-[1px] bg-[#39d353]" />
                   <span>More</span>
                 </div>
               </div>
@@ -161,17 +159,17 @@ export default function GitStats() {
               {pinnedRepos.map((repo) => (
                 <div
                   key={repo.name}
-                  className="rounded-xl border border-border-dark bg-card-bg/10 p-5 backdrop-blur-sm transition-all duration-300 hover:border-border-dark/80 hover:bg-card-bg/30 flex flex-col justify-between"
+                  className="rounded-xl border border-border-dark bg-[#0a0a0c]/60 p-6 flex flex-col justify-between shadow-sm card-border-glow"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center justify-between mb-3.5">
                       <div className="flex items-center gap-2">
                         <BookOpen className="h-4 w-4 text-accent-purple" />
                         <a
                           href={repo.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-display text-sm font-bold text-white hover:text-accent-purple transition-colors"
+                          className="font-mono text-xs font-bold text-white hover:text-accent-purple transition-colors"
                         >
                           {repo.name}
                         </a>
@@ -180,18 +178,18 @@ export default function GitStats() {
                         Public
                       </span>
                     </div>
-                    <p className="text-xs text-text-muted leading-relaxed line-clamp-3">
+                    <p className="text-xs text-text-muted leading-relaxed font-sans line-clamp-3">
                       {repo.description}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-4 mt-6 text-[10px] text-text-muted">
+                  <div className="flex items-center gap-4 mt-6 text-[10px] font-mono text-text-muted border-t border-border-dark/30 pt-3.5">
                     <span className="flex items-center gap-1">
-                      <span className={`h-2.5 w-2.5 rounded-full ${repo.langColor}`} />
+                      <span className={`h-2 w-2 rounded-full ${repo.langColor}`} />
                       <span>{repo.language}</span>
                     </span>
                     <span className="flex items-center gap-0.5">
-                      <Star className="h-3.5 w-3.5 text-yellow-500" />
+                      <Star className="h-3.5 w-3.5 text-yellow-500/80" />
                       <span>{repo.stars}</span>
                     </span>
                     <span className="flex items-center gap-0.5">
@@ -205,41 +203,47 @@ export default function GitStats() {
 
           </div>
 
-          {/* Right Block - Top Languages breakdown */}
-          <div className="lg:col-span-4 rounded-xl border border-border-dark bg-card-bg/10 p-6 backdrop-blur-sm h-full flex flex-col justify-between">
+          {/* Right Block - Segmented Language Distribution Bar (Notion/GitHub style) */}
+          <div className="lg:col-span-4 rounded-xl border border-border-dark bg-[#0a0a0c]/60 p-6 shadow-sm flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 mb-6">
-                <GitHubIcon className="h-5 w-5 text-text-white" />
-                <h4 className="font-display text-xs font-bold uppercase tracking-wider text-white">
-                  Language Distribution
+                <GitHubIcon className="h-4.5 w-4.5 text-text-white" />
+                <h4 className="font-mono text-[10px] font-bold uppercase tracking-wider text-white">
+                  Languages Profile
                 </h4>
               </div>
 
-              {/* Progress bars list */}
-              <div className="space-y-5">
+              {/* Segmented Progress Bar */}
+              <div className="h-3 w-full rounded-full bg-border-dark overflow-hidden flex mb-8">
                 {topLanguages.map((lang) => (
-                  <div key={lang.name} className="space-y-1.5">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-text-muted font-medium">{lang.name}</span>
-                      <span className="text-white font-bold">{lang.percentage}%</span>
+                  <div
+                    key={lang.name}
+                    style={{ width: `${lang.percentage}%` }}
+                    className={`h-full ${lang.color}`}
+                    title={`${lang.name}: ${lang.percentage}%`}
+                  />
+                ))}
+              </div>
+
+              {/* Language labels with bullet points */}
+              <div className="space-y-4 font-sans text-xs">
+                {topLanguages.map((lang) => (
+                  <div key={lang.name} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className={`h-2.5 w-2.5 rounded-full ${lang.color}`} />
+                      <span className="text-text-muted">{lang.name}</span>
                     </div>
-                    <div className="h-2 w-full rounded-full bg-border-dark overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${lang.percentage}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className={`h-full rounded-full ${lang.color}`}
-                      />
-                    </div>
+                    <span className="font-mono font-bold text-white text-[11px]">
+                      {lang.percentage}%
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Quick stats footer */}
-            <div className="mt-8 border-t border-border-dark/30 pt-4 text-[10px] text-text-muted leading-relaxed">
-              Calculated using github-linguist stats compiled across production-deployed repositories in the last 12 months.
+            <div className="mt-8 border-t border-border-dark/30 pt-4 text-[9px] font-mono text-text-muted leading-relaxed">
+              Dynamically mapped language metrics compiled across production repositories.
             </div>
           </div>
 
