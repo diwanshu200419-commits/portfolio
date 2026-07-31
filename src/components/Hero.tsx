@@ -158,13 +158,13 @@ export default function Hero() {
                   <img
                     src="/profile.png"
                     alt="Diwanshu Profile Portrait"
-                    className="h-full w-full object-cover grayscale opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100"
+                    className="h-full w-full object-cover"
                     draggable="false"
                   />
                 </div>
 
                 {/* Floating Location Overlay */}
-                <div className="absolute bottom-6 left-6 z-20 flex items-center gap-2 rounded-full bg-[#070708]/90 border border-border-dark/60 px-3.5 py-1 text-[10px] font-mono text-text-muted select-none">
+                <div className="absolute bottom-6 left-6 z-20 flex items-center gap-2 rounded-full bg-primary-bg/90 border border-border-dark/60 px-3.5 py-1 text-[10px] font-mono text-text-muted select-none">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                   <span>Himachal Pradesh, India</span>
                 </div>
