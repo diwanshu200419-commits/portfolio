@@ -7,9 +7,12 @@ import { Search, ExternalLink, ArrowUpRight, BookOpen, X, Info, CheckCircle2, Al
 import { GitHubIcon } from "@/components/icons";
 
 const screenshotMap: Record<string, string> = {
-  "resume-builder": "/vaylo_ai_ui.jpg",
   "smartdollar-labs": "/smart_dollar_ui.jpg",
-  "ebook-marketplace": "/ebook_marketplace_ui.jpg"
+  "resume-builder": "/vaylo_ai_ui.jpg",
+  "ebook-marketplace": "/ebook_marketplace_ui.jpg",
+  "travel-website": "/guru_kripa_ui.jpg",
+  "interior-decor": "/interior_decor_ui.jpg",
+  "kulja-motors": "/kulja_motors_ui.jpg"
 };
 
 export default function Projects() {
