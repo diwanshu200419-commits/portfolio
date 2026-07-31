@@ -40,7 +40,6 @@ export default function Navbar() {
     { label: "Contact", href: "#contact", id: "contact" },
   ];
 
-  // Track scrolling to adjust navbar style (add background blur when scrolled)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -50,11 +49,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Track active section using Intersection Observer
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-40% 0px -50% 0px", // Detect when section is in the middle of viewport
+      rootMargin: "-40% 0px -50% 0px",
       threshold: 0.1,
     };
 
@@ -94,7 +92,9 @@ export default function Navbar() {
     <>
       <header
         className={`fixed left-0 right-0 top-0 z-40 transition-all duration-300 ${
-          scrolled ? "glassmorphism py-4" : "bg-transparent py-6 border-b border-transparent"
+          scrolled
+            ? "bg-primary-bg/85 border-b border-border-dark/60 backdrop-blur-md py-3.5 shadow-[0_2px_18px_rgba(0,0,0,0.02)]"
+            : "bg-transparent py-5 border-b border-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
@@ -102,9 +102,9 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "hero")}
-            className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight text-white transition-opacity hover:opacity-90"
+            className="flex items-center gap-2.5 font-display text-[15px] font-bold tracking-tight text-text-white transition-opacity hover:opacity-90"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-accent-purple to-accent-blue font-display text-base font-black text-white shadow-md">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-purple font-display text-sm font-black text-white shadow-sm">
               D
             </div>
             <span>Diwanshu</span>
@@ -117,15 +117,15 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`relative text-xs font-semibold tracking-wider uppercase transition-colors duration-200 hover:text-text-white ${
-                  activeSection === link.id ? "text-text-white" : "text-text-muted"
+                className={`relative text-[13px] font-medium tracking-normal transition-colors duration-200 hover:text-text-white py-1 ${
+                  activeSection === link.id ? "text-text-white font-semibold" : "text-text-muted"
                 }`}
               >
-                {link.label}
+                <span>{link.label}</span>
                 {activeSection === link.id && (
                   <motion.div
                     layoutId="activeNavIndicator"
-                    className="absolute -bottom-1.5 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-purple to-accent-blue"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent-purple"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -134,11 +134,11 @@ export default function Navbar() {
           </nav>
 
           {/* Theme switcher & Action Buttons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="rounded-full p-2 text-text-muted hover:text-text-white transition-colors cursor-pointer"
+              className="rounded-lg p-2 text-text-muted hover:text-text-white transition-colors hover:bg-secondary-bg cursor-pointer"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -149,17 +149,17 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="group flex items-center gap-1.5 rounded-full bg-white border border-border-dark px-4 py-2 text-xs font-bold text-primary-bg transition-all duration-300 hover:bg-white/95 hover:shadow-lg hover:shadow-white/5 active:scale-95"
+                className="group flex items-center gap-1.5 rounded-lg bg-text-white border border-border-dark px-4 py-2 text-xs font-bold text-primary-bg transition-all duration-200 hover:shadow-sm active:scale-98"
               >
                 <span>Hire Me</span>
-                <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-card-bg hover:text-text-white xl:hidden"
+              className="rounded-lg p-1.5 text-text-muted transition-colors hover:bg-secondary-bg hover:text-text-white xl:hidden"
               aria-label="Toggle Navigation Menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -172,19 +172,19 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[72px] z-30 border-b border-border-dark bg-primary-bg/95 p-6 shadow-2xl backdrop-blur-xl xl:hidden"
+            className="fixed inset-x-0 top-[64px] z-30 border-b border-border-dark bg-primary-bg/95 p-6 shadow-2xl backdrop-blur-xl xl:hidden"
           >
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className={`text-sm font-medium tracking-wide uppercase transition-colors py-2 border-b border-border-dark/20 ${
+                  className={`text-[13px] font-medium tracking-normal transition-colors py-2.5 border-b border-border-dark/30 ${
                     activeSection === link.id ? "text-accent-purple font-semibold" : "text-text-muted"
                   }`}
                 >
@@ -194,7 +194,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-accent-purple to-accent-blue py-2.5 text-xs font-bold text-white shadow-md active:scale-95"
+                className="mt-3 flex w-full items-center justify-center gap-2 rounded-lg bg-accent-purple py-2.5 text-xs font-bold text-white shadow-sm active:scale-95"
               >
                 <span>Hire Me</span>
                 <ArrowRight className="h-3.5 w-3.5" />

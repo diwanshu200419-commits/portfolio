@@ -101,11 +101,11 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.4 }}
                 key={project.id}
-                className="group flex flex-col rounded-xl border border-border-dark bg-card-bg/30 overflow-hidden card-border-glow h-full"
+                className="group flex flex-col rounded-2xl border border-border-dark bg-card-bg overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 h-full"
               >
                 {/* Visual Header Mockup (Real Image or abstract Vercel styling) */}
                 {screenshotMap[project.id] ? (
-                  <div className="relative h-48 w-full border-b border-border-dark overflow-hidden bg-[#070708]">
+                  <div className="relative h-52 w-full border-b border-border-dark/80 overflow-hidden bg-secondary-bg/20">
                     <img
                       src={screenshotMap[project.id]}
                       alt={`${project.title} Preview`}
@@ -114,7 +114,7 @@ export default function Projects() {
                     />
                   </div>
                 ) : (
-                  <div className="relative h-48 w-full bg-gradient-to-br from-[#0c0c0e] to-[#070708] border-b border-border-dark flex items-center justify-center p-6 overflow-hidden">
+                  <div className="relative h-52 w-full bg-gradient-to-br from-[#0c0c0e] to-[#070708] border-b border-border-dark/80 flex items-center justify-center p-6 overflow-hidden">
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.02),transparent_70%)]" />
                     
                     {/* Styled Browser Window */}
@@ -140,15 +140,15 @@ export default function Projects() {
                 )}
 
                 {/* Card Info Content */}
-                <div className="flex-1 p-6 flex flex-col justify-between">
+                <div className="flex-1 p-7 flex flex-col justify-between">
                   <div>
                     <span className="text-[10px] font-mono text-text-muted tracking-wider uppercase">
                       {project.category}
                     </span>
-                    <h4 className="font-display text-lg font-bold text-white mt-1 group-hover:text-accent-purple transition-colors">
+                    <h4 className="font-display text-lg font-bold text-text-white mt-1 group-hover:text-accent-purple transition-colors">
                       {project.title}
                     </h4>
-                    <p className="mt-3 text-xs text-text-muted leading-relaxed font-sans">
+                    <p className="mt-3.5 text-xs text-text-muted leading-relaxed font-sans">
                       {project.tagline}
                     </p>
                   </div>
@@ -159,23 +159,23 @@ export default function Projects() {
                       {project.techStack.slice(0, 3).map((tech) => (
                         <span
                           key={tech}
-                          className="rounded bg-border-dark/30 border border-border-dark/40 px-2.5 py-0.5 text-[10px] font-mono text-text-white"
+                          className="rounded-full bg-secondary-bg/50 border border-border-dark/60 px-3 py-1 text-[10px] font-mono text-text-muted transition-colors group-hover:border-border-dark"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.techStack.length > 3 && (
-                        <span className="rounded bg-border-dark/10 px-2 py-0.5 text-[9px] font-mono text-text-muted">
+                        <span className="rounded-full bg-secondary-bg/30 px-2.5 py-1 text-[9px] font-mono text-text-muted">
                           +{project.techStack.length - 3} more
                         </span>
                       )}
                     </div>
 
                     {/* Action Links */}
-                    <div className="flex items-center gap-4 pt-3 border-t border-border-dark/20 text-xs">
+                    <div className="flex items-center gap-4 pt-4.5 border-t border-border-dark/40 text-xs">
                       <button
                         onClick={() => setActiveProject(project)}
-                        className="flex items-center gap-1 font-bold text-white hover:text-accent-purple transition-colors cursor-pointer"
+                        className="flex items-center gap-1.5 font-bold text-text-white hover:text-accent-purple transition-colors cursor-pointer"
                       >
                         <span>Case Study</span>
                         <ArrowUpRight className="h-3.5 w-3.5" />
@@ -185,7 +185,7 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-text-muted hover:text-white transition-colors flex items-center gap-1 font-semibold"
+                        className="text-text-muted hover:text-text-white transition-colors flex items-center gap-1.5 font-semibold"
                       >
                         <span>Live Demo</span>
                         <ExternalLink className="h-3 w-3" />
