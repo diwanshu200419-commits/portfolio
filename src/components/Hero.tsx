@@ -92,7 +92,7 @@ export default function Hero() {
             >
               <button
                 onClick={() => handleScrollTo("projects")}
-                className="group flex items-center gap-2 rounded-lg bg-white px-6 py-3.5 text-xs font-bold text-primary-bg transition-all hover:bg-white/90 active:scale-98 cursor-pointer"
+                className="group flex items-center gap-2 rounded-lg bg-highlight-cyan px-6 py-3.5 text-xs font-bold text-primary-bg transition-all hover:opacity-90 active:scale-98 cursor-pointer"
               >
                 <span>View Products</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

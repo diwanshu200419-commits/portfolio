@@ -106,7 +106,7 @@ export default function ResumeSnapshot() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-2.5 text-xs font-bold text-primary-bg transition-all hover:bg-white/90 active:scale-95 cursor-pointer"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-highlight-cyan px-4 py-2.5 text-xs font-bold text-primary-bg transition-all hover:opacity-90 active:scale-95 cursor-pointer"
                 >
                   <Eye className="h-3.5 w-3.5" />
                   <span>View Resume</span>
