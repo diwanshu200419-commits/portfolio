@@ -124,7 +124,7 @@ export default function Terminal() {
         {/* Terminal Window Frame */}
         <div
           onClick={focusInput}
-          className="relative rounded-xl border border-border-dark bg-[#070b13]/90 shadow-2xl backdrop-blur-md overflow-hidden cursor-text"
+          className="relative rounded-2xl border border-border-dark bg-[#070b13]/90 shadow-2xl backdrop-blur-md overflow-hidden cursor-text transition-all duration-300 hover:border-accent-purple/35"
         >
           {/* Header Bar */}
           <div className="flex items-center justify-between border-b border-border-dark bg-black/40 px-4 py-2.5 select-none">
@@ -184,7 +184,7 @@ export default function Terminal() {
                 <span className="text-[#fafafa] select-none whitespace-pre break-all pointer-events-none">
                   {inputVal}
                 </span>
-                <span className="h-3.5 w-1.5 bg-accent-blue animate-pulse ml-0.5 pointer-events-none" />
+                <span className="h-3.5 w-1.5 bg-accent-purple animate-pulse ml-0.5 pointer-events-none" />
               </span>
             </form>
           </div>

@@ -33,7 +33,7 @@ export default function AvailabilityStats() {
       title: "Completed Projects",
       value: "6+ Built",
       description: "Developed and published full-stack web applications, landing pages, and regional business catalogs.",
-      color: "text-accent-blue bg-accent-blue/10",
+      color: "text-accent-purple bg-accent-purple/10",
       action: () => handleScrollTo("projects")
     },
     {
@@ -49,7 +49,7 @@ export default function AvailabilityStats() {
       title: "Development Style",
       value: "Responsive & Semantic",
       description: "Focusing on page speed, clean document structure, search engine readability, and responsive layout scaling.",
-      color: "text-emerald-500 bg-emerald-500/10",
+      color: "text-accent-purple bg-accent-purple/10",
       action: () => handleScrollTo("projects")
     },
     {
@@ -57,7 +57,7 @@ export default function AvailabilityStats() {
       title: "Seeking Role",
       value: "Junior Software Engineer",
       description: "Ready to join a team as a junior developer or engineering intern where I can learn, build, and contribute.",
-      color: "text-amber-500 bg-amber-500/10",
+      color: "text-accent-purple bg-accent-purple/10",
       action: () => handleScrollTo("contact")
     },
     {
@@ -65,7 +65,7 @@ export default function AvailabilityStats() {
       title: "Hosting & Tools",
       value: "Vercel • Netlify • Git",
       description: "Deploying code with Git integration, managing active deployment previews, and configuring environment variables.",
-      color: "text-indigo-500 bg-indigo-500/10",
+      color: "text-accent-purple bg-accent-purple/10",
       action: null
     },
     {
@@ -73,7 +73,7 @@ export default function AvailabilityStats() {
       title: "Currently Learning",
       value: "Database Design & SQL",
       description: "Improving my knowledge of relational database structures, database indexing, and query optimization.",
-      color: "text-rose-500 bg-rose-500/10",
+      color: "text-accent-purple bg-accent-purple/10",
       action: () => handleScrollTo("timeline")
     }
   ];
@@ -132,7 +132,7 @@ export default function AvailabilityStats() {
 
           {/* Right Column - Status Card */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative rounded-xl border border-border-dark bg-card-bg/60 p-6 shadow-sm card-border-glow">
+            <div className="relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35">
               {/* Pulsing Availability Badge */}
               <div className="flex items-center justify-between border-b border-border-dark/45 pb-4 mb-4">
                 <span className="font-mono text-[9px] text-text-muted uppercase tracking-wider">
@@ -156,19 +156,19 @@ export default function AvailabilityStats() {
                   <span>Located in Solan, Himachal Pradesh, India</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-4.5 w-4.5 rounded bg-accent-blue/10 flex items-center justify-center text-accent-blue shrink-0">
+                  <span className="h-4.5 w-4.5 rounded bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
                     <Compass className="h-3 w-3" />
                   </span>
                   <span>Flexible with Remote / Hybrid / On-site roles</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-4.5 w-4.5 rounded bg-highlight-cyan/10 flex items-center justify-center text-highlight-cyan shrink-0">
+                  <span className="h-4.5 w-4.5 rounded bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
                     <Briefcase className="h-3 w-3" />
                   </span>
                   <span>Seeking Software Engineer (SDE) / Junior Developer roles</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="h-4.5 w-4.5 rounded bg-amber-400/10 flex items-center justify-center text-amber-400 shrink-0">
+                  <span className="h-4.5 w-4.5 rounded bg-accent-purple/10 flex items-center justify-center text-accent-purple shrink-0">
                     <Zap className="h-3 w-3" />
                   </span>
                   <span>Available to join immediately</span>
@@ -194,7 +194,7 @@ export default function AvailabilityStats() {
                 key={idx}
                 variants={itemVariants}
                 onClick={() => hasAction && stat.action()}
-                className={`relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between ${
+                className={`relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between ${
                   hasAction ? "cursor-pointer" : ""
                 }`}
               >

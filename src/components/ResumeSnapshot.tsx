@@ -64,7 +64,7 @@ export default function ResumeSnapshot() {
           {/* CARD 1: Professional Summary (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -88,7 +88,7 @@ export default function ResumeSnapshot() {
           {/* CARD 8: Resume Actions (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -132,10 +132,10 @@ export default function ResumeSnapshot() {
           {/* CARD 2: Technical Skills (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow"
+            className="md:col-span-2 lg:col-span-2 relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35"
           >
             <div className="flex items-center gap-2 mb-5">
-              <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
+              <div className="rounded-lg bg-accent-purple/10 p-2 text-accent-purple">
                 <Cpu className="h-4.5 w-4.5" />
               </div>
               <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
@@ -167,11 +167,11 @@ export default function ResumeSnapshot() {
           {/* CARD 3: Education (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
+                <div className="rounded-lg bg-accent-purple/10 p-2 text-accent-purple">
                   <GraduationCap className="h-4.5 w-4.5" />
                 </div>
                 <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
@@ -198,11 +198,11 @@ export default function ResumeSnapshot() {
           {/* CARD 5: Career Objective (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="rounded-lg bg-accent-blue/10 p-2 text-accent-blue">
+                <div className="rounded-lg bg-accent-purple/10 p-2 text-accent-purple">
                   <Target className="h-4.5 w-4.5" />
                 </div>
                 <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
@@ -221,7 +221,7 @@ export default function ResumeSnapshot() {
           {/* CARD 4: Featured Projects (2 cols wide) */}
           <motion.div 
             variants={cardVariants}
-            className="md:col-span-2 lg:col-span-2 relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="md:col-span-2 lg:col-span-2 relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -300,7 +300,7 @@ export default function ResumeSnapshot() {
           {/* CARD 6: Currently Learning (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -339,7 +339,7 @@ export default function ResumeSnapshot() {
           {/* CARD 7: Strengths (1 col) */}
           <motion.div 
             variants={cardVariants}
-            className="relative rounded-xl border border-border-dark bg-card-bg/50 p-6 shadow-sm card-border-glow flex flex-col justify-between"
+            className="relative rounded-2xl border border-border-dark bg-card-bg p-6 shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 hover:shadow-[0_12px_36px_rgba(0,0,0,0.04)] hover:border-accent-purple/35 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-2 mb-4">
@@ -417,7 +417,7 @@ export default function ResumeSnapshot() {
 
               {/* Modal Content - Scrollable Resume Sheet */}
               <div className="flex-1 overflow-y-auto p-6 md:p-10 text-white select-text">
-                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-card-bg/50 rounded-xl">
+                <div className="max-w-3xl mx-auto p-6 border border-border-dark bg-card-bg rounded-2xl shadow-sm">
                   {/* Top info */}
                   <div className="border-b border-border-dark/80 pb-6">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
@@ -437,13 +437,13 @@ export default function ResumeSnapshot() {
 
                   {/* Summary */}
                   <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Professional Summary</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-3">Professional Summary</h5>
                     <p className="text-xs leading-relaxed text-text-muted font-sans">{resumeData.summary}</p>
                   </div>
 
                   {/* Skills Grid */}
                   <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Technical Stack</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-4">Technical Stack</h5>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {resumeData.skills.map((s, idx) => (
                         <div key={idx} className="space-y-1">
@@ -460,7 +460,7 @@ export default function ResumeSnapshot() {
 
                   {/* Experience */}
                   <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Experience</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-4">Experience</h5>
                     <div className="space-y-4">
                       {resumeData.experience.map((exp, idx) => (
                         <div key={idx} className="border-l border-border-dark/60 pl-4 py-0.5">
@@ -477,7 +477,7 @@ export default function ResumeSnapshot() {
 
                   {/* Projects */}
                   <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-4">Featured Projects</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-4">Featured Projects</h5>
                     <div className="space-y-6">
                       {resumeData.projects.map((p, idx) => (
                         <div key={idx} className="border-l border-border-dark/60 pl-4 py-0.5">
@@ -503,7 +503,7 @@ export default function ResumeSnapshot() {
 
                   {/* Certifications */}
                   <div className="py-6 border-b border-border-dark/80">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Certifications</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-3">Certifications</h5>
                     <ul className="list-disc pl-5 text-xs text-text-muted space-y-1 font-sans">
                       {resumeData.certifications.map((cert, idx) => (
                         <li key={idx}>{cert}</li>
@@ -513,7 +513,7 @@ export default function ResumeSnapshot() {
 
                   {/* Education */}
                   <div className="py-6">
-                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-blue mb-3">Education</h5>
+                    <h5 className="font-display text-xs font-bold uppercase tracking-wider text-accent-purple mb-3">Education</h5>
                     {resumeData.education.map((edu, idx) => (
                       <div key={idx} className="space-y-1">
                         <div className="flex justify-between items-baseline text-xs font-bold">
